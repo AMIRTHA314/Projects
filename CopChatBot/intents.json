@@ -1,0 +1,44 @@
+{
+  "intents": [
+    {
+      "tag": "help",
+      "patterns": ["Help", "I need help", "Help me", "சகாயம்", "எனக்கு உதவி வேண்டும்"],
+      "responses": {
+        "en": ["Sure, how can I assist you?", "Please explain your issue."],
+        "ta": ["நிச்சயமாக, எப்படி உதவலாம்?", "உங்கள் பிரச்சனையை விளக்கவும்."]
+      }
+    },
+    {
+      "tag": "emergency",
+      "patterns": ["Emergency", "It's an emergency", "தீவிர நிலை", "அவசர நிலை"],
+      "responses": {
+        "en": ["Please call 100 immediately.", "For emergencies, dial 100."],
+        "ta": ["அவசரநிலை என்றால் 100 அழைக்கவும்.", "உடனடியாக 100 அழைக்கவும்."]
+      }
+    },
+    {
+      "tag": "lost_item",
+      "patterns": ["I lost my phone", "My wallet is missing", "நான் என் கைப்பேசியை தொலைத்துவிட்டேன்", "என் பணப்பை காணவில்லை"],
+      "responses": {
+        "en": ["Please visit the nearest police station to file a report.", "Report the lost item at your local police station."],
+        "ta": ["தயவுசெய்து அருகிலுள்ள காவல் நிலையத்தில் புகார் அளிக்கவும்.", "உங்களது பொருளை அருகிலுள்ள காவல் நிலையத்தில் புகாரளிக்கவும்."]
+      }
+    },
+    {
+      "tag": "traffic_fine",
+      "patterns": ["How to pay traffic fine", "Where to pay traffic fine", "போக்குவரத்து அபராதம் செலுத்த எப்படி", "அபராதம் செலுத்த எங்கே"],
+      "responses": {
+        "en": ["You can pay your traffic fine online via the official police portal.", "Visit your nearest police station for assistance."],
+        "ta": ["அதிகாரப்பூர்வ இணையதளத்தில் போக்குவரத்து அபராதத்தை செலுத்தலாம்.", "உதவிக்கு அருகிலுள்ள காவல் நிலையத்திற்கு செல்லவும்."]
+      }
+    },
+    {
+      "tag": "goodbye",
+      "patterns": ["Goodbye", "Bye", "See you later", "விடைபெறுகிறேன்", "பிரியாவிடை"],
+      "responses": {
+        "en": ["Stay safe! Goodbye.", "Take care and be safe."],
+        "ta": ["விடைபெறுகிறேன்! பாதுகாப்பாக இருங்கள்.", "பாதுகாப்பாக இருங்கள்."]
+      }
+    }
+  ]
+}
