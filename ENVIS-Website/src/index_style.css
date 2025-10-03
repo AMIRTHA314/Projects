@@ -1,0 +1,3217 @@
+/* --- Global CSS Variables --- */
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Poppins:wght@300;400;500;600&display=swap');
+        :root {
+            --primary-maroon: #800000;
+            --accent-gold: #d4af37;
+            --light-bg: #fdfcf9; /* A very subtle off-white for main background */
+            --dark-text: #000000;
+            --light-text: #666;
+            --card-bg: #ffffff; /* Pure white for clean cards */
+            --footer-dark: #3b506b; /* Original footer color */
+            --header-height: 90px; /* Adjusted header height */
+
+            /* Call for Papers Specific Colors - Adapted to Maroon/Gold theme */
+            --cfp-bg-section: #FDFCF9; /* Using light-bg for seamless integration */
+            --cfp-text-dark: var(--dark-text); /* Main text color */
+            --cfp-text-medium: var(--light-text); /* Secondary text color */
+            --cfp-card-background: var(--primary-maroon); /* Maroon for the person cards */
+            --cfp-line-color: var(--accent-gold); /* Gold for the lines */
+            --cfp-shadow-light: rgba(0, 0, 0, 0.08); /* Subtle shadow */
+            --cfp-shadow-medium: rgba(0, 0, 0, 0.15); /* Deeper shadow */
+
+            /* Important Dates Section Specific Colors - Adapted to existing palette */
+            --important-dates-bg-dark: var(--primary-maroon); /* Dark background for events section */
+            --important-dates-accent-light: var(--accent-gold); /* Gold for accents */
+            --important-dates-date-bubble-bg: var(--card-bg); /* White for date bubble */
+            --important-dates-date-text: var(--dark-text); /* Dark text for date bubble */
+            --important-dates-date-day-color: var(--primary-maroon); /* Maroon for day number */
+            --important-dates-date-month-color: var(--light-text);
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+      html {
+	  
+	        scroll-padding-top: 84px; 
+            scroll-behavior: auto !important;
+        }
+		html, body {
+       margin: 0;
+  padding: 0;
+}
+
+        
+
+/* Import Google Fonts */
+/* Import Google Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Poppins:wght@300;400;500;600&display=swap');
+
+/* Global CSS Variables - Blue & White Theme */
+:root {
+    --primary-blue: #000080; /* Navy blue */
+    --accent-blue: #1E90FF; /* Dodger blue */
+    --light-bg: #ffffff; /* Pure white background */
+    --dark-text: #000080; /* Navy for text */
+    --light-text: #5a5a5a; /* Neutral grey for secondary text */
+    --card-bg: #ffffff; /* White for cards */
+    --footer-dark: #000033; /* Dark navy for footer */
+    --header-height: 90px;
+
+    /* CFP Colors */
+    --cfp-bg-section: #ffffff;
+    --cfp-text-dark: var(--dark-text);
+    --cfp-text-medium: var(--light-text);
+    --cfp-card-background: var(--primary-blue);
+    --cfp-line-color: var(--accent-blue);
+    --cfp-shadow-light: rgba(0, 0, 128, 0.08);
+    --cfp-shadow-medium: rgba(0, 0, 128, 0.15);
+
+    /* Important Dates Colors */
+    --important-dates-bg-dark: var(--primary-blue);
+    --important-dates-accent-light: var(--accent-blue);
+    --important-dates-date-bubble-bg: var(--card-bg);
+    --important-dates-date-text: var(--dark-text);
+    --important-dates-date-day-color: var(--primary-blue);
+    --important-dates-date-month-color: var(--light-text);
+
+    /* Background */
+    --body-gradient: linear-gradient(135deg, #ffffff 0%, #f0f8ff 100%);
+}
+
+/* Global font settings */
+body, .topics-sectionbody, .theme, guest {
+    font-family: 'Poppins', sans-serif !important;
+    background: var(--body-gradient);
+    color: var(--dark-text);
+    line-height: 1.7;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+h1, h2, h3, h4, h5, h6,
+.section h2,
+.hero-content h1,
+.hero-content h2,
+.date,
+#committee-section h2,
+.about-insititute-section h2,
+.about-dept-section h2,
+.about-conference-section h2,
+.topics-section h2,
+.chief-guest-section .section-title,
+.chief-guest-name {
+    font-family: 'Playfair Display', serif !important;
+    font-weight: 600;
+    color: var(--primary-blue);
+}
+
+/* Ensure theme and CFP sections use body font */
+.theme,
+.theme p,
+.theme li,
+.insititute-details,
+.dept-details,
+.conference-details {
+    font-family: 'Poppins', sans-serif !important;
+    color: var(--dark-text);
+}
+
+/* Links */
+a {
+    color: var(--primary-blue);
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+a:hover {
+    color: var(--accent-blue);
+    text-decoration: underline;
+}
+
+/* Buttons */
+button, .chief-guest-btn, .register-btn {
+    background: var(--primary-blue);
+    border: 2px solid var(--primary-blue);
+    color: white;
+    box-shadow: 0 4px 12px rgba(0, 0, 128, 0.3);
+    transition: all 0.3s ease;
+}
+
+button:hover, .chief-guest-btn:hover, .register-btn:hover {
+    background: white;
+    color: var(--primary-blue);
+    border-color: var(--primary-blue);
+}
+
+/* Section underline accents */
+.section h2::after,
+.about-insititute-section h2::after,
+.about-dept-section h2::after,
+.about-conference-section h2::after,
+.topics-section h2::after,
+#committee-section h2::after,
+.chief-guest-section .section-title::after,
+.chief-guest-designation::after {
+    background-color: var(--primary-blue) !important;
+}
+
+/* Cards */
+.club-card, .speaker-card, .incharge-card, .chief-guest-section {
+    box-shadow: 0 8px 20px rgba(0, 0, 128, 0.15);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    background: var(--card-bg);
+    border: 2px solid var(--primary-blue);
+}
+
+.club-card:hover, .speaker-card:hover, .incharge-card:hover, .chief-guest-section:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 12px 30px rgba(0, 0, 128, 0.3);
+}
+
+/* Card accents */
+.club-card .card-img-top,
+.speaker-img,
+.chief-guest-img,
+.honour-guest-img,
+.incharge-card img {
+    border-color: var(--primary-blue) !important;
+    box-shadow: 0 4px 10px rgba(0, 0, 128, 0.3);
+}
+
+/* Hero section overlay in blue */
+.hero-section .slide::before {
+    background: rgba(0,0,0,0.5) !important; /* keep only subtle dark overlay */
+}
+
+/* Header */
+.header-wrapper {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 999;
+    background: white;
+    border-bottom: 3px solid var(--primary-blue);
+}
+
+.topheader {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: white;
+    padding: 10px 20px;
+    position: relative;
+    flex-wrap: wrap;
+    height: 110px;
+    margin-top: 10px;
+}
+
+.topheader img {
+    height: 100px;
+}
+
+.navbar {
+    background: var(--primary-blue);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 10px 20px;
+    flex-wrap: wrap;
+    position: relative;
+}
+
+.nav-links a {
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+    transition: color 0.3s ease;
+}
+
+.nav-links a:hover {
+    color: var(--accent-blue);
+}
+
+.register-btn {
+    border-radius: 0;
+    padding: 12px 18px;
+    background: var(--primary-blue);
+    color: white;
+    font-weight: bold;
+    white-space: nowrap;
+    margin-left: auto;
+    border: 2px solid var(--primary-blue);
+}
+
+.register-btn:hover {
+    background: white;
+    color: var(--primary-blue);
+}
+
+/* Footer */
+footer {
+    background: var(--primary-blue);
+    color: white;
+    box-shadow: 0 -4px 12px rgba(0, 0, 128, 0.3);
+}
+
+        /* --- Header --- */
+                /* --- Header --- */
+/* --- Header --- */
+/* Top header with 3 image logos */
+/* --- Fixed Header Wrapper --- */
+    /* Header Wrapper */
+.header-wrapper {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 999;
+    background-color: white;
+    border-bottom: 3px solid #000080; /* Navy border */
+    box-shadow: 0 2px 5px rgba(0, 0, 128, 0.2);
+}
+
+/* Top Header */
+.topheader {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: white;
+    padding: 10px 20px;
+    position: relative;
+    flex-wrap: wrap;
+    height: 110px;
+    margin-top: 10px;
+}
+
+.topheader img {
+    height: 100px;
+}
+
+.left-logo,
+.right-logo {
+    flex: 1;
+}
+
+.left-logo {
+    text-align: left;
+}
+
+.left-logo img {
+    width: 350px;
+    height: auto;
+}
+
+.center-logo img {
+    width: 350px;
+    height: auto;
+}
+
+.center-logo {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.right-logo {
+    text-align: right;
+}
+
+/* Navbar */
+.navbar {
+    background-color:#f8f9fa; /* Navy blue */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 10px 20px;
+    flex-wrap: wrap;
+    position: relative;
+}
+
+.nav-links {
+    display: flex;
+    gap: 13px;
+    flex-wrap: wrap;
+}
+
+.nav-links a {
+    color:#343a40;
+    text-decoration: none;
+    font-weight: bold;
+    transition: color 0.3s ease;
+}
+
+.nav-links a:hover {
+    color: #343a40; /* Dodger blue */
+}
+
+/* Register Button */
+.register-btn {
+    border-radius: 0;
+    padding: 12px 18px;
+    background-color:#f8f9fa; /* Navy */
+    color: #343a40;
+    font-weight: bold;
+    white-space: nowrap;
+    margin-left: auto;
+    border: 0.5px #f8f9fa ;
+}
+
+.register-btn:hover {
+    background-color: #e9ecef;
+    color: #343a40;
+}
+
+/* Hamburger Menu */
+.hamburger {
+    display: none;
+    flex-direction: column;
+    cursor: pointer;
+}
+
+.hamburger div {
+    width: 25px;
+    height: 3px;
+    background-color: white;
+    margin: 4px 0;
+}
+
+.navbar-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 20px;
+    padding: 0 20px;
+}
+
+/* Responsive Styles */
+@media (max-width: 1200px) {
+    .hamburger {
+        display: flex;
+    }
+
+    .nav-links {
+        display: none;
+        flex-direction: column;
+        width: 100%;
+        background-color: #000080; /* Navy */
+        margin-top: 10px;
+    }
+
+    .nav-links.active {
+        display: flex;
+    }
+
+    .navbar {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .register-btn {
+        align-self: flex-end;
+        margin-top: 10px;
+    }
+
+    .topheader {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .center-logo {
+        position: static;
+        transform: none;
+        margin: 10px 0;
+    }
+
+    .topheader img {
+        height: 60px;
+        width: auto;
+    }
+
+    .left-logo img,
+    .right-logo img,
+    .center-logo img {
+        width: 150px;
+        height: auto;
+    }
+}
+/* ========================================================== */
+/* --- Hero Section (Banner) & Carousel Styling --- */
+/* ========================================================== */
+.hero-section {
+      position: relative;
+      height: 100vh;
+      overflow: hidden;
+      color: white;
+	  margin-top:1000px;
+    }
+
+    .slide {
+      position: absolute;
+      top: 0; left: 0;
+      width: 100vw;
+      height: 100vh;
+      opacity: 0;
+      transition: opacity 1s ease-in-out;
+    }
+
+    .slide.active {
+      opacity: 1;
+      z-index: 1;
+    }
+
+    .slide img {
+      width: 100vw;
+      height: 100vh;
+      object-fit: cover;
+      filter: brightness(0.8);
+    }
+
+    .slide::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background-color: rgba(0, 0, 0, 0.5);
+      z-index: 1;
+    }
+
+    .overlay-year {
+      position: absolute;
+      top: 50px;
+      right: 20px;
+      background-color: rgba(0,0,0,0.6);
+      padding: 8px 15px;
+      border-radius: 5px;
+      font-size: 1rem;
+      z-index: 2;
+    }
+
+    .hero-content {
+      position: absolute;
+      top:50%;
+      left: 50%;
+      transform: translate(-50%, -40%);
+      text-align: center;
+      z-index: 3;
+      padding: 0 150px;
+    }
+
+    .hero-content h1 {
+      font-size: 5.5rem;
+	  margin-top:9px;
+      margin-bottom: 25px;
+      font-weight: 370;
+      text-shadow: 4px 4px 10px rgba(0,0,0,0.9);
+      letter-spacing: 1px;
+      line-height: 1.1;
+      color: white;
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+	  font-family:Algerian;
+    }
+
+    .hero-content h2 {
+      font-size: 3rem;
+      margin-bottom: 35px;
+      font-weight: 300;
+      text-shadow: 2px 2px 5px rgba(0,0,0,0.4);
+      letter-spacing: 1.5px;
+      color: rgba(255, 255, 255, 0.9);
+	  font-family:Algerian ;
+    }
+
+    .date {
+      font-size: 2.2rem;
+      font-weight: 600;
+      color: white;
+      text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.5);
+      margin-top: -15px;
+      margin-bottom: 40px;
+      letter-spacing: 1.5px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+	  font-family:Algerian ;
+    }
+
+    .controls {
+      position: absolute;
+      top: 50%;
+      width: 100%;
+      display: flex;
+      justify-content: space-between;
+      z-index: 4;
+      transform: translateY(-50%);
+    }
+
+    .controls button {
+      background-color: rgba(0,0,0,0.5);
+      border: none;
+      color: white;
+      padding: 10px;
+      font-size: 1.5rem;
+      cursor: pointer;
+      transition: background 0.3s;
+    }
+
+    .controls button:hover {
+      background-color: rgba(0,0,0,0.8);
+    }
+
+    /* Medium screens */
+    @media (max-width: 768px) {
+      .hero-content h1 {
+        font-size: 4rem;
+        white-space: normal;
+      }
+
+      .hero-content h2 {
+        font-size: 2.5rem;
+      }
+
+      .date {
+        font-size: 1.8rem;
+      }
+    }
+
+    /* Small screens (phones) */
+    @media (max-width: 768px) {
+      .hero-content h1 {
+        font-size: 2.8rem;
+        white-space: normal;
+      }
+
+      .hero-content h2 {
+        font-size: 1.8rem;
+      }
+
+      .date {
+        font-size: 1.4rem;
+        flex-direction: column;
+        text-align: center;
+      }
+	  
+
+      .controls button {
+        font-size: 1.2rem;
+        padding: 8px;
+      }
+    }
+	@media (min-width: 481px) and (max-width:1000px) {
+    .hero-content h1 {
+        font-size: 3rem; /* Larger for medium screens */
+		margin-top:130px;
+    }
+    .hero-content h2 {
+        font-size: 2.5rem; /* Larger for medium screens */
+    }
+    .date {
+        font-size: 1.8rem; /* Larger for medium screens */
+        flex-direction: row; /* Maybe switch back to row for medium? */
+    }
+}
+
+/* Large screens: Apply even larger font sizes for screens 769px and up */
+@media (min-width: 769px)and (max-width: 1200px) {
+    .hero-content h1 {
+        font-size: 4rem;
+		margin-top:700px;
+    }
+    .hero-content h2 {
+        font-size: 3rem;
+    }
+    .date {
+        font-size: 2.2rem;
+        flex-direction: row; /* Default for large screens */
+    }
+    .hero-content h1 {
+        white-space: nowrap; /* Back to nowrap for large screens */
+    }
+    .controls button {
+        font-size: 1.5rem;
+    }
+}
+	
+        /* --- Global CSS Variables (copied from your main code for consistency) --- */
+        :root {
+            --primary-maroon: #800000;    /* Dark Maroon */
+            --accent-gold: #D4AF37;       /* Classic Gold */
+            --light-bg: #fdfcf9;          /* A very subtle off-white for main background */
+            --dark-text: #000000;         /* Pure Black for primary text */
+            --light-text: #666666;        /* Medium Grey for secondary text/subtitles */
+            --card-bg: #ffffff;          /* Pure white for clean cards */
+            --card-shadow-base: rgba(0, 0, 0, 0.1);
+            --card-shadow-hover: rgba(0, 0, 0, 0.2);
+
+            /* Optional subtle background gradient (if used on body) */
+            --body-gradient: linear-gradient(135deg, #fdfcf9 0%, #f7f3ed 100%); /* Adjusted for lighter theme */
+        }
+
+        /* Basic Resets (from your main code) */
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        guest{
+            font-family: 'Montserrat', sans-serif;
+            background: var(--light-bg); /* Use light-bg for simpler standalone view */
+            color: var(--dark-text);
+            line-height: 1.7;
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+            padding: 30px 30px; /* Padding for standalone view */
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 10vh;
+            min-width:1200px; /* This ensures enough space for centering the overall section */
+        }
+
+        /* --- General Section Styling (from your main code, for the H2 and intro text) --- */
+        /* Note: This is applied to the H2 and intro-text within .chief-guest-section */
+        .chief-guest-section .section-title { /* New class for the main H2 */
+            font-family: 'Lora', serif;
+            color: var(--primary-maroon);
+            font-size: 3.5rem;
+            font-weight: 700;
+            margin-bottom: 25px; /* Space below the main title */
+            position: relative;
+            padding-bottom: 15px;
+            letter-spacing: 1px;
+            display: inline-block; /* Allows underline to fit content */
+        }
+
+        .chief-guest-section .section-title::after {
+            content: '';
+            position: absolute;
+            left: 50%;
+            bottom: 0;
+            transform: translateX(-50%);
+            width: 120px;
+            height: 6px;
+            background-color: var(--accent-gold);
+            border-radius: 4px;
+        }
+
+        .chief-guest-section .intro-text {
+            text-align: center;
+            margin: 0 auto 60px auto; /* Centered, more space below */
+            font-size: 1.25rem;
+            color: var(--dark-text);
+            max-width: 900px;
+            line-height: 1.8;
+            font-weight: 300;
+        }
+/* --- Chief Guest Section Specific Styling (Revised) --- */
+.chief-guest-section {
+    padding: 80px 20px;
+    
+    /* Remove or increase max-width to allow the section to grow */
+    /* max-width: 1100px; */ 
+    
+    /* If you want it to always fill the screen width: */
+    width: 100%; 
+
+    margin: 50px auto; 
+    text-align: center;
+    background-color: var(--card-bg);
+    border-radius: 20px;
+    box-shadow: 0 15px 45px rgba(0, 0, 0, 0.15);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+        .chief-guest-section:hover {
+            transform: translateY(-10px); /* Lift on hover */
+            box-shadow: 0 25px 60px rgba(0, 0, 0, 0.25); /* Deeper shadow on hover */
+        }
+
+        .chief-guest-profile-content { /* New wrapper for the profile details */
+            display: flex;
+            flex-direction: column;
+            align-items: center; /* Centers items horizontally within this flex container */
+        }
+
+        .chief-guest-img {
+            max-width: 100%; /* Ensure image is responsive and doesn't overflow its container */
+            height: auto; /* Maintain aspect ratio */
+            width: 500px; /* Will scale down due to max-width */
+            height: 300px; /* Will scale down due to max-width */
+            object-fit: contain; /* Ensures the entire image is visible within its bounds */
+            border: 2px solid var(--accent-gold); /* Thicker gold border */
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1); /* Subtle shadow for image */
+            margin-bottom: 25px; /* Space below image */
+			
+			
+        }
+		 .honour-guest-img {
+            max-width: 100%; /* Ensure image is responsive and doesn't overflow its container */
+            height: auto; /* Maintain aspect ratio */
+            width:300px; /* Will scale down due to max-width */
+            height: 300px; /* Will scale down due to max-width */
+            object-fit: contain; /* Ensures the entire image is visible within its bounds */
+            border: 1px solid var(--accent-gold); /* Thicker gold border */
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1); /* Subtle shadow for image */
+            margin-bottom: 25px; /* Space below image */
+			
+			
+        }
+		
+
+        .chief-guest-name {
+            font-family: 'Lora', serif;
+            color: var(--primary-maroon);
+            font-size: 2rem;
+            font-weight: 500;
+            margin-bottom: 10px;
+            line-height: 1.1;
+        }
+
+        .chief-guest-designation {
+            font-size: 1.4rem;
+            color: var(--light-text);
+            margin-bottom: 30px;
+            font-weight: 500;
+            position: relative;
+            padding-bottom: 15px;
+        }
+
+        .chief-guest-designation::after {
+            content: '';
+            position: absolute;
+            left: 50%;
+            bottom: 0;
+            transform: translateX(-50%);
+            width: 80px;
+            height: 4px;
+            background-color: var(--accent-gold);
+            border-radius: 2px;
+        }
+
+        .chief-guest-bio {
+            font-size: 1.1rem;
+            color: var(--dark-text);
+            line-height: 1.7;
+            margin-bottom: 30px;
+            max-width: 700px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .chief-guest-btn {
+            background-color: var(--primary-maroon);
+            border-color: var(--primary-maroon);
+            padding: 12px 28px;
+            border-radius: 30px;
+            font-weight: 600;
+            color: white;
+            text-decoration: none;
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            transition: background-color 0.3s ease, transform 0.2s ease, box-shadow 0.3s ease;
+            font-size: 1rem;
+        }
+
+        .chief-guest-btn:hover {
+            background-color: #6a0000;
+            border-color: #6a0000;
+            transform: translateY(-3px);
+            box-shadow: 0 8px 20px rgba(0,0,0,0.2);
+        }
+
+        /* --- Responsive Design --- */
+        @media (max-width: 992px) {
+            .chief-guest-section {
+                padding: 60px 20px;
+                max-width: 500%; /* Adjust for smaller screens too if needed */
+            }
+            .chief-guest-section .section-title {
+                font-size: 3rem;
+            }
+            .chief-guest-section .intro-text {
+                font-size: 1.15rem;
+                margin-bottom: 40px;
+            }
+            .chief-guest-img {
+                width: 180px;
+                height: 180px;
+                border-width: 6px;
+                margin-bottom: 20px;
+            }
+            .chief-guest-name {
+                font-size: 3rem;
+            }
+            .chief-guest-designation {
+                font-size: 1.2rem;
+                margin-bottom: 25px;
+            }
+            .chief-guest-bio {
+                font-size: 1rem;
+                margin-bottom: 25px;
+            }
+        }
+
+        @media (max-width: 767px) {
+            .chief-guest-section {
+                padding: 40px 15px;
+                max-width: 900px; /* Adjust for smaller screens */
+            }
+            .chief-guest-section .section-title {
+                font-size: 2.5rem;
+                margin-bottom: 20px;
+            }
+            .chief-guest-section .section-title::after {
+                width: 100px;
+                height: 4px;
+            }
+            .chief-guest-section .intro-text {
+                font-size: 1rem;
+                margin-bottom: 30px;
+            }
+            .chief-guest-img {
+                width: 160px;
+                height: 160px;
+                border-width: 5px;
+                margin-bottom: 20px;
+            }
+            .chief-guest-name {
+                font-size: 2.5rem;
+            }
+            .chief-guest-designation {
+                font-size: 1.1rem;
+                margin-bottom: 20px;
+            }
+            .chief-guest-designation::after {
+                width: 60px;
+                height: 3px;
+            }
+            .chief-guest-bio {
+                font-size: 0.95rem;
+                margin-bottom: 20px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .chief-guest-section {
+                padding: 30px 30px;
+                max-width: 800%; /* Adjust for smallest screens */
+            }
+            .chief-guest-section .section-title {
+                font-size: 2rem;
+                margin-bottom: 15px;
+            }
+            .chief-guest-section .intro-text {
+                font-size: 0.95rem;
+                margin-bottom: 20px;
+            }
+            .chief-guest-img {
+                width: 80px;
+                height: 120px;
+                border-width: 4px;
+                margin-bottom: 15px;
+            }
+            .chief-guest-name {
+                font-size: 2rem;
+            }
+            .chief-guest-designation {
+                font-size: 1rem;
+                margin-bottom: 15px;
+            }
+            .chief-guest-bio {
+                font-size: 0.9rem;
+                margin-bottom: 15px;
+            }
+            .chief-guest-btn {
+                padding: 10px 20px;
+                font-size: 0.9rem;
+            }
+        }
+
+	
+/* Container for the "About the insititute" section */
+/* Container for the "About the Institute" section */
+.about-insititute-section {
+    background-color: var(--card-bg);
+    border-radius: 10px;
+    width: 1200px;
+    box-shadow: 0 8px 30px var(--cfp-shadow-medium);
+    padding: 20px;
+    text-align: justify;
+    margin: 20px auto 0 auto;
+    max-width: 1200px;
+    scroll-margin-top: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    height: auto;
+    border-top: 4px solid var(--accent-gold);
+    margin-bottom: 0!important;; /* Reduced bottom gap */
+}
+
+/* Main heading */
+.about-insititute-section h2 {
+    font-family: 'Georgia', serif;
+    font-size: 3em;
+    color: #8B0000;
+    text-align: center;
+    width: 100%;
+    margin-bottom: 30px;
+    padding-bottom: 3px;
+    position: relative;
+}
+
+.about-insititute-section h2::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 80px;
+    height: 4px;
+    background-color: #DAA520;
+    border-radius: 2px;
+}
+
+/* Stack image and text vertically */
+.about-content-columns {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+    width: 100%;
+    margin-top: 20px;
+}
+
+.insititute-image {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 10px;
+}
+
+.insititute-image img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.insititute-details {
+    width: 100%;
+    line-height: 1.6;
+    color: #000000;
+    padding: 20px;
+    margin-bottom: 0 !important;
+}
+
+.insititute-details p {
+    margin-bottom: 0 !important; /* Ensure no extra space */
+}
+
+/* --- About Department Section --- */
+.about-dept-section {
+    padding-top: 0px; /* Adjusted gap between sections */
+    margin-top: 0 !important;;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0px;
+    
+    text-align: justify;
+    width: 100%;
+    max-width: 100%;
+}
+
+.about-dept-section h2 {
+    font-family: 'Georgia', serif;
+    font-size: 2.5em;
+    color: #8B0000;
+    text-align: center;
+    width: 100%;
+    margin-top:0 !important; /* Tight margin */
+    padding-bottom: 3px;
+    padding-top: 0 !important;
+    position: relative;
+}
+
+.about-dept-section h2::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 80px;
+    height: 4px;
+    background-color: #DAA520;
+    border-radius: 2px;
+	margin-bottom:0.1px;
+}
+
+.dept-details {
+    flex: 1.1; /* Slightly reduced */
+    min-width: 300px;
+    line-height: 1.8;
+    color: #000000;
+    margin: 0 !important;
+}
+
+
+.dept-details p {
+    margin-bottom: 0.5em;
+	margin-top:5px;
+}
+
+.dept-image {
+    flex: 1;
+    width:100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 50px;
+    margin-right: 0px; /* Reduced space */
+    margin-top: 5px;
+	
+}
+
+
+.dept-image img {
+    width:100%;
+    height: 300px;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+	margin-top:0.5px;
+	margin-bottom:50px;
+	margin-right:20px;
+	
+}
+
+/* --- Original .about-conference-section (kept for completeness) --- */
+/* Container for the "About the Conference" section */
+.about-conference-section {
+    background-color: var(--card-bg);
+    border-radius: 10px;
+    width: 1200px;
+    box-shadow: 0 8px 30px var(--cfp-shadow-medium);
+    padding: 20px;
+    margin: 20px auto; /* This controls space above/below this box */
+    max-width: 4000px; /* Consider reducing this max-width for a more constrained layout */
+    display: block;
+    height: auto;
+    border-top: 4px solid var(--accent-gold);
+	text-align: justify; 
+}
+
+.about-conference-section-dept {
+    background-color: var(--card-bg);
+    border-radius: 10px;
+    box-shadow: 0 10px 40px var(--cfp-shadow-medium);
+    padding: 20px;
+    max-width: 1200px;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    height: 60px;
+    font-size: 1em;
+    justify-content: center;
+    align-items: center;
+}
+
+.about-conference-section-dept h5 {
+    text-align: center;
+    width: 100%;
+    margin: 0;
+    Color: #800000;
+}
+
+.about-conference-section h2 {
+    font-family: 'Georgia', serif;
+    font-size: 3em;
+    color: #8B0000;
+    text-align: center;
+    width: 100%;
+    margin-bottom: 30px;
+    padding-bottom: 3px;
+    position: relative;
+}
+
+.about-conference-section h2::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 80px;
+    height: 4px;
+    background-color: #DAA520;
+    border-radius: 2px;
+}
+
+.conference-details {
+    line-height: 1.6;
+    color: #000000;
+}
+
+.conference-details p {
+    margin-bottom: 0.5em;
+}
+
+.conference-image {
+    display: none;
+}
+
+/* --- Responsive adjustments for ALL sections --- */
+@media (max-width: 768px) {
+    .about-insititute-section,
+    .about-dept-section,
+    .about-conference-section { /* Apply common responsive adjustments */
+        padding: 15px;
+        margin: 10px auto; /* Reduced margin for all sections on mobile */
+        width: 95%; /* Make them almost full width */
+        max-width: 95%; /* Ensure max-width is also responsive */
+        height: auto; /* Ensure height is auto on mobile */
+    }
+
+    .about-insititute-section h2,
+    .about-dept-section h2,
+    .about-conference-section h2 {
+        font-size: 2em;
+        margin-bottom: 15px;
+    }
+
+    .about-content-columns {
+        gap: 10px;
+        margin-top: 10px;
+    }
+
+    .insititute-image,
+    .dept-image {
+        padding: 5px;
+        height: auto; /* Ensure image container height is auto */
+    }
+
+    .insititute-details,
+    .dept-details,
+    .conference-details {
+        font-size: 0.9em;
+        padding: 5px;
+    }
+
+    .about-dept-section {
+        flex-direction: column; /* Stack columns vertically on smaller screens */
+    }
+    .dept-details, .dept-image {
+        flex: none;
+        width: 100%;
+    }
+    .about-dept-section-dept {
+        max-width: 100%;
+    }
+}   
+	
+ /* --- General Section Styling --- */
+        .section {
+            padding: 40px 20px;
+            max-width: 1200px;
+            margin: auto;
+            color:#000000;
+
+        }
+
+        .section h2 {
+            font-family: Algerian;
+            color: var(--primary-maroon);
+            font-size: 4rem;
+            font-weight: 550;
+            margin-bottom: 45px;
+			 margin-top: 45px;
+            text-align: center;
+            position: relative;
+            padding-bottom: 15px;
+        }
+
+        .section h2::after {
+            content: '';
+            position: absolute;
+            left: 50%;
+            bottom: 0;
+            transform: translateX(-50%);
+            width: 120px;
+            height: 6px;
+            background-color: var(--accent-gold);
+            border-radius: 4px;
+        }
+
+        .section .intro-text {
+            text-align: center;
+            margin-bottom: 60px;
+            font-size: 1.25rem;
+            color:#000000;
+            max-width: 900px;
+            margin-left: auto;
+            margin-right: auto;
+            line-height: 1.8;
+            font-weight: 300;
+        }
+	
+
+/* --- Speakers Section --- */
+#speakers {
+    background-color: var(--light-bg); /* Ensuring consistency */
+    /* Add padding if you want space around the speakers container */
+    padding: 50px 0; /* Example padding for the section */
+}
+
+.speakers-container {
+    display: flex;
+    flex-wrap: wrap; /* Keep wrap in case screen size is too small */
+    justify-content: center; /* Centers the row of cards */
+    gap: 20px; /* Adjusted space between cards, smaller to fit 4 */
+    margin-top: 50px;
+    max-width: 1200px; /* Example: Give it enough max-width */
+    margin-left: auto; /* Center the container itself */
+    margin-right: auto; /* Center the container itself */
+}
+
+.club-card {
+    background-color: var(--card-bg);
+    border-radius: 15px;
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    width: 280px; /* Fixed width for cards - keep this as it is */
+    height: 400px;
+    text-align: center;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* Centers children horizontally */
+    justify-content: space-between;
+    /* border-top removed as per previous step, if it's meant under image */
+    flex-shrink: 0; /* Prevents cards from shrinking when space is tight */
+}
+
+/* ... rest of your CSS for .club-card:hover, .card-img-top, .card-body, etc. remains the same ... */
+
+.club-card .card-img-top {
+    width: 190px;
+    height: 270px; /* Fixed height for consistent image size */
+    border-radius: 50% / 50%; /* This will create a vertical oval */
+    border-bottom: 4px solid var(--accent-gold); /* Gold line below the oval image */
+    display: flex;
+    justify-content: center; /* Centers horizontally within the oval */
+    align-items: center;    /* Centers vertically within the oval */
+    object-fit: cover; /* Ensures the image covers the oval area without distortion */
+    overflow: hidden; /* Hides any parts of the image that extend beyond the oval border-radius */
+    margin-top: 20px; /* Adjust as needed for spacing from the top of the card */
+    margin-bottom: 10px; /* Adjust as needed for spacing from the card-body */
+}
+
+.club-card .card-title a {
+    color: var(--primary-maroon); /* Apply maroon color */
+    text-decoration: none; /* Remove underline */
+    transition: color 0.3s ease; /* Smooth transition for hover effect */
+}
+
+.club-card .card-title a:hover {
+    color: #6a0000; /* Slightly darker maroon on hover for visual feedback */
+    text-decoration: underline; /* Add underline on hover if desired */
+}
+
+
+.speaker-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 20px;
+  max-width: 1000px;
+  margin: 0 auto;
+  padding: 60px;
+  margin-top: 50px;
+  
+}
+
+
+.speaker-card {
+  background-color: #800000;
+  border-radius: 12px;
+  overflow: hidden;
+  color: #fff;
+  width: 280px;
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.7);
+  transition: transform 0.3s ease;
+  margin: 0 auto; /* Center the card itself */
+  height:450px;
+  padding-top: 10px;
+  height:380px;
+}
+
+.speaker-card:hover {
+  transform: translateY(-5px);
+}
+
+.speaker-img {
+  height: 270px;
+  width: 80%;
+  margin: 0 auto; /* ✅ Center the div horizontally */
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  border-radius: 90% / 90%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.speaker-info {
+  padding: 10px;
+  text-align: center;
+}
+
+.speaker-name {
+  font-size: 17px;
+  font-weight: 700;
+  margin: 6px 0;
+  color: white;
+}
+
+.speaker-desc {
+  color: #d0d0d0;
+  font-weight: 500;
+  font-size: 14px;
+  margin: 4px 0;
+}
+    
+		/* --- Important Dates Section --- */
+        /* Variables for easy color adjustments if needed */
+        :root {
+            --primary-red: #8B0000; /* Darker red from the image */
+            --light-bg: #FCFCFC; /* Very light background */
+            --card-bg: #FFFFFF;
+            --text-dark: #333333;
+            --text-medium: #666666;
+            --shadow-color: rgba(0, 0, 0, 0.5);
+            --shadow-hover-color: rgba(0, 0, 0, 0.1);
+        }
+
+        /* General Body/Section Styling */
+        date-section {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: var(--light-bg);
+            display: flex;
+            justify-content: center;
+            align-items: flex-start;
+            min-height: 100vh;
+            box-sizing: border-box;
+            overflow-x: auto; /* Allows horizontal scrolling if cards overflow */
+        }
+
+        .important-dates-section {
+            width: 100%;
+            max-width: 1200px;
+            padding: 60px 20px;
+            text-align: center;
+            box-sizing: border-box;
+        }
+
+        /* Section Header */
+        .section-header {
+            /* INCREASED GAP HERE */
+            margin-bottom: 80px; /* Increased space below the header */
+        }
+
+        .section-header h1 {
+            color: var(--primary-red);
+            font-size: 1.8em;
+            font-weight: 700;
+            margin-bottom: 10px;
+            position: relative;
+            display: inline-block;
+        }
+
+        .section-header h1::after {
+            content: '';
+            display: block;
+            width: 70%;
+            height: 3px;
+            background-color: var(--primary-red);
+            margin: 8px auto 0;
+            border-radius: 2px;
+        }
+
+        .section-header p {
+            color: var(--text-medium);
+            font-size: 1.15em;
+            margin-top: 20px;
+        }
+
+        /* Cards Container */
+        .cards-container {
+            display: flex;
+            justify-content: center;
+			text-align:center;
+			align-items:center;
+            gap: 35px; /* Space between cards */
+            padding: 20px; /* Space for scrollbar if needed */
+        }
+
+        /* Individual Card Styling */
+        .date-card {
+    background-color: var(--card-bg);
+    border-radius: 18px;
+    box-shadow: 0 10px 20px var(--shadow-color);
+    width: 220px; /* Fixed width */
+    height: 200px; /* Fixed height */
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+    cursor: pointer;
+    flex-shrink: 0;
+    position: relative;
+    padding: 40px 20px 25px 20px; /* Top padding for icon space */
+    box-sizing: border-box;
+    justify-content: space-between; /* Pushes underline to bottom */
+}
+
+        .date-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 15px 30px var(--shadow-hover-color);
+        }
+
+        /* Icon Styling (The small maroon box) */
+        .date-card .icon {
+            width: 60px; /* Larger icon area */
+            height: 60px;
+            background-color: var(--primary-red);
+            border-radius: 15px; /* Slightly rounded corners for the "box" shape */
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            box-shadow: 0 3px 6px rgba(0, 0, 0, 0.1); /* Subtle shadow for icon */
+            /* Positioning the icon outside the card */
+            position: absolute;
+            top: -30px; /* Half of its height above the top edge of the card */
+            left: 50%; /* Center horizontally */
+            transform: translateX(-50%); /* Adjust to truly center */
+            z-index: 10; /* Ensure it stays above other content */
+        }
+
+        .date-card .icon i {
+            color: white;
+            font-size: 2.2em; /* Ensure icon is a good size within its box */
+        }
+
+        .date-card h3 {
+            color: var(--primary-red);
+            font-size: 1em; /* important date event title font size*/
+            font-weight: 600;
+            margin-top: 0; /* Reset margin */
+            margin-bottom: 12px;
+            line-height: 1.3;
+        }
+
+        .date-card p {
+    color: var(--text-dark);
+    font-size: 0.9em;
+    font-weight: 700;
+    margin: 0;
+    text-align: center;
+    line-height: 1.4;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    max-height: 3.5em; /* Roughly two lines */
+}
+
+        /* Underline at the bottom of the card */
+        .date-card .underline {
+            width: 70px;
+            height: 4px;
+            background-color: var(--primary-red);
+            border-radius: 2px;
+            margin-top: auto;
+        }
+
+        /* Media Queries (only for font sizing/padding, NOT for layout wrapping) */
+        @media (max-width: 1200px) {
+            .cards-container {
+                gap: 25px;
+            }
+            .date-card {
+                min-width: 240px;
+            }
+        }
+
+        @media (max-width: 1024px) {
+            .section-header h1 {
+                font-size: 2.4em;
+            }
+            .section-header p {
+                font-size: 1.05em;
+            }
+            /* Adjust overall padding if needed */
+            .important-dates-section {
+                padding-top: 50px;
+                padding-bottom: 50px;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .section-header h1 {
+                font-size: 2em;
+            }
+            .section-header p {
+                font-size: 1em;
+            }
+            .important-dates-section {
+                padding: 40px 10px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .section-header h1 {
+                font-size: 1.8em;
+            }
+            .section-header p {
+                font-size: 0.9em;
+            }
+            .date-card {
+                min-width: 220px;
+                padding: 25px 15px;
+                padding-top: 65px; /* Maintain padding for icon */
+            }
+            .date-card .icon {
+                width: 50px;
+                height: 50px;
+                top: -25px; /* Adjust top for smaller icon */
+            }
+            .date-card .icon i {
+                font-size: 2em;
+            }
+            .date-card h3 {
+                font-size: 1.3em;
+            }
+            .date-card p {
+                font-size: 1.1em;
+            }
+        }
+        /* --- Call for Papers Section --- */
+        .theme {
+        background-color: #f7f7f7;
+        font-family: 'Roboto', sans-serif;
+        display: flex;
+        justify-content: center;
+        align-items: flex-start;
+        min-height: 100vh;
+        margin: 0;
+        padding-top: 50px;
+    }
+
+    .theme-container {
+        width: 90%;
+        max-width: 800px;
+        padding: 20px;
+    }
+
+   
+
+    .accordion-item {
+        background-color: #ffffff;
+        border: 1px solid #7c1a1f;
+        border-radius: 5px;
+        margin-bottom: 20px;
+        overflow: hidden;
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        transition: box-shadow 0.3s ease;
+    }
+
+    .accordion-item:hover {
+        box-shadow: 0 6px 10px rgba(0, 0, 0, 0.15);
+    }
+
+    .accordion-header-wrapper {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 15px 25px;
+        cursor: pointer;
+    }
+
+    .accordion-header {
+        color: #7c1a1f;
+        font-size: 1.2rem;
+        font-weight: 600;
+    }
+
+    .accordion-arrow {
+        color: #7c1a1f;
+        font-size: 1.2rem;
+        line-height: 1;
+        transition: transform 0.3s ease;
+    }
+
+    .accordion-content {
+        max-height: 0;
+        overflow: hidden;
+        transition: max-height 0.4s ease-in-out, padding 0.4s ease-in-out;
+        background-color: #fcfcfc;
+        padding: 0 25px;
+    }
+
+    .accordion-content ul {
+        list-style-type: disc;
+        padding-left: 20px;
+        margin: 0;
+    }
+
+    .accordion-content li {
+        color: #4a4a4a;
+        margin-bottom: 8px;
+        font-size: 1.1rem;
+    }
+
+    /* Show on hover */
+    .accordion-item:hover .accordion-content {
+        max-height: 500px;
+        padding-top: 15px;
+        padding-bottom: 15px;
+    }
+
+    .accordion-item:hover .accordion-arrow {
+        transform: rotate(180deg);
+    }
+	
+        /* --- Contact Section --- */
+        .incharge-section {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 50px;
+            margin-top: 50px;
+        }
+
+        .incharge-card {
+            background-color: var(--card-bg);
+            border-radius: 15px;
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
+            overflow: hidden;
+            width: 350px; /* Wider card for contact info */
+            text-align: center;
+            padding: 30px;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .incharge-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 40px rgba(0, 0, 0, 0.15);
+        }
+
+        .incharge-card img {
+            width: 150px;
+            height: 150px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 5px solid var(--accent-gold); /* Gold border for profile pic */
+            margin-bottom: 25px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+        }
+
+        .incharge-card h3 {
+            font-family: 'Lora', serif;
+            color: var(--primary-maroon);
+            font-size: 2rem; /* Larger for names */
+            font-weight: 700;
+            margin-bottom: 8px;
+        }
+
+        .incharge-card p {
+            font-size: 1.15rem;
+            color: var(--light-text);
+            margin-bottom: 25px;
+            font-weight: 500;
+        }
+
+        .incharge-card .contact-info p {
+            font-size: 1rem;
+            color: var(--dark-text);
+            margin-bottom: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+        }
+
+        .incharge-card .contact-info p a {
+            color: var(--primary-maroon);
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+
+        .incharge-card .contact-info p a:hover {
+            color: var(--accent-gold);
+            text-decoration: underline;
+        }
+
+        .incharge-card .contact-info i {
+            color: var(--accent-gold);
+            font-size: 1.1rem;
+        }
+
+        .contact-address {
+            text-align: center;
+            font-size: 1.15rem;
+            color: var(--light-text);
+            margin-top: 60px;
+            max-width: 800px;
+            margin-left: auto;
+            margin-right: auto;
+            line-height: 1.6;
+        }
+
+        .contact-address i {
+            color: var(--primary-maroon);
+            margin-right: 10px;
+            font-size: 1.25rem;
+        }
+
+        /* --- Footer --- */
+        footer {
+            background-color: var(--footer-dark);
+            color: white;
+            text-align: center;
+            padding: 40px 20px;
+            font-size: 0.95rem;
+            margin-top: 80px; /* Space above footer */
+            line-height: 1.6;
+        }
+
+        footer p {
+            margin-bottom: 8px;
+        }
+
+        /* --- Lightbox for Image Preview (Optional) --- */
+        #lightbox-overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.85);
+            display: none; /* Hidden by default */
+            justify-content: center;
+            align-items: center;
+            z-index: 2000;
+            cursor: zoom-out;
+        }
+
+        #lightbox-content {
+            max-width: 90%;
+            max-height: 90%;
+            border-radius: 10px;
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.6);
+        }
+
+        /* --- Responsive Design --- */
+        @media (max-width: 992px) {
+            .split-header {
+                flex-direction: column;
+                height: auto; /* Allow height to adjust */
+                padding-bottom: 10px; /* Padding below nav on smaller screens */
+            }
+
+            .split-header .left,
+            .split-header .right {
+                width: 100%;
+                justify-content: center;
+                padding: 10px 20px;
+            }
+
+            .split-header .left {
+                padding-bottom: 0;
+            }
+
+            .split-header .right {
+                padding-top: 0;
+            }
+
+            body {
+                padding-top: calc(var(--header-height) + 60px); /* Adjust for stacked header */
+            }
+
+            .club-banner h1 {
+                font-size: 4rem;
+            }
+
+            .club-banner p {
+                font-size: 1.5rem;
+            }
+
+            .section h2 {
+                font-size: 3rem;
+            }
+            .section .intro-text {
+                font-size: 1.1rem;
+            }
+
+            .about-flex {
+                flex-direction: column;
+                gap: 50px;
+            }
+
+            .about-image {
+                flex: 0 0 auto; /* Allow image to shrink/grow */
+                max-width: 600px; /* Constrain max width on medium screens */
+                width: 150%;
+                height:80%;
+            }
+
+            .club-card {
+                width: 280px; /* Smaller cards on medium screens */
+            }
+
+            .events-title {
+                font-size: 3rem;
+            }
+
+            .events-subtitle {
+                font-size: 1.1rem;
+            }
+
+            .event-item {
+                flex-direction: column;
+                align-items: flex-start;
+                padding: 20px;
+            }
+
+            .event-date {
+                margin-right: 0;
+                margin-bottom: 15px;
+                width: 80px;
+                height: 80px;
+            }
+
+            .event-date .day {
+                font-size: 2rem;
+            }
+
+            .event-details .event-heading {
+                font-size: 1.4rem;
+            }
+
+            .event-details .event-description {
+                font-size: 0.95rem;
+            }
+
+            .cfp-header-top {
+                font-size: 1.8rem;
+            }
+
+            .cfp-title {
+                font-size: 3rem;
+            }
+
+            .cfp-subtitle {
+                font-size: 1.1rem;
+            }
+
+            .person-card {
+                width: calc(50% - 20px); /* Two cards per row */
+            }
+
+            .incharge-card {
+                width: calc(50% - 25px); /* Two cards per row */
+                padding: 25px;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .navbar-brand img {
+                height: 60px;
+            }
+
+            .split-header .nav-link {
+                padding: 10px 0;
+                margin: 0;
+                text-align: center;
+            }
+
+            .club-banner {
+                padding: 100px 15px;
+            }
+
+            .club-banner h1 {
+                font-size: 3rem;
+            }
+
+            .club-banner p {
+                font-size: 1.2rem;
+            }
+
+            .section {
+                padding: 70px 15px;
+            }
+
+            .section h2 {
+                font-size: 2.5rem;
+                margin-bottom: 30px;
+            }
+
+            .section h2::after {
+                width: 100px;
+                height: 5px;
+            }
+
+            .section .intro-text {
+                font-size: 1rem;
+                margin-bottom: 40px;
+            }
+
+            .about-text {
+                max-width: 100%;
+            }
+
+            .about-text p {
+                font-size: 1rem;
+            }
+
+            .cta-buttons {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .cta-buttons .learn {
+                width: 100%;
+                max-width: 300px;
+                font-size: 1rem;
+            }
+
+            .speakers-container {
+                gap: 30px;
+            }
+
+            .club-card {
+                width: 90%; /* Almost full width on smaller phones */
+                max-width: 320px; /* Maintain max-width */
+            }
+
+            .events-title {
+                font-size: 2.5rem;
+            }
+
+            .events-subtitle {
+                font-size: 1rem;
+                margin-bottom: 40px;
+            }
+
+            .event-item {
+                padding: 15px;
+            }
+
+            .event-date {
+                width: 70px;
+                height: 70px;
+                margin-bottom: 10px;
+            }
+
+            .event-date .day {
+                font-size: 1.8rem;
+            }
+
+            .event-details .event-heading {
+                font-size: 1.25rem;
+            }
+
+            .cfp-header-top {
+                font-size: 1.5rem;
+                margin-bottom: 40px;
+            }
+
+            .cfp-title {
+                font-size: 2.5rem;
+            }
+
+            .cfp-subtitle {
+                font-size: 1rem;
+            }
+
+            .person-card {
+                width: 90%; /* Single column for CFP cards */
+                max-width: 350px;
+            }
+
+            .incharge-card {
+                width: 90%; /* Single column for contact cards */
+                max-width: 350px;
+            }
+
+            .contact-address {
+                font-size: 1rem;
+                margin-top: 40px;
+            }
+
+            footer {
+                padding: 30px 15px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .club-banner h1 {
+                font-size: 2.5rem;
+            }
+
+            .club-banner p {
+                font-size: 1rem;
+            }
+
+            .section h2 {
+                font-size: 2rem;
+            }
+
+            .events-title {
+                font-size: 2rem;
+            }
+
+            .event-details .event-heading {
+                font-size: 1.1rem;
+            }
+        }
+            /* Conference Specific Colors */
+        /* --- Section Container for Topics --- */
+       
+        .topics-sectionbody {
+            font-family: 'Montserrat', sans-serif;
+            background: var(--body-gradient); /* Apply gradient background */
+            color: var(--dark-text); /* Fallback text color */
+            line-height: 1.6;
+            min-height: 110vh; /* Ensure it takes full viewport height(for navigation) */
+            overflow-x: hidden; /* Prevent horizontal scroll */
+            display: flex; /* For centering the section on the page */
+            justify-content: center; /* Center horizontally */
+            align-items: center; /* Center vertically */
+            padding: 35px 15px; /* Overall padding for the body */
+            border-top: 4px solid var(--accent-gold); /* Gold line below image */
+
+        }
+
+        .topics-section {
+            width: 500%;
+            max-width: 1400px; /* Max width for the entire section */
+            padding: 40px 20px; /* Padding inside the section */
+            background-color: var(--card-container-bg); /* White background for the section itself */
+            border-radius: 25px; /* More rounded section */
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.18); /* Deeper shadow for the whole section */
+            text-align: center;
+            border-top: 4px solid var(--accent-gold); /* Gold line below image */
+
+
+           
+        }
+.topics-section-column {
+            width: 100%;
+            max-width:420px; /* Max width for the entire section */
+            padding: 40px 20px; /* Padding inside the section */
+            background-color: var(--card-container-bg); /* White background for the section itself */
+            border-radius: 25px; /* More rounded section */
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.18); /* Deeper shadow for the whole section */
+            text-align: center;
+            display: flex; /* For centering the section on the page */
+            justify-content: center; /* Center horizontally */
+            align-items: center; /* Center vertically */
+            height:500px;
+
+
+           
+        }
+
+
+
+        .topics-section h2 {
+            font-family: 'Lora', serif;
+            color: var(--primary-maroon);
+            font-size: 3.8rem; /* Large section title */
+            font-weight: 700;
+            margin-bottom: 25px;
+            position: relative;
+            padding-bottom: 15px;
+            letter-spacing: 1px;
+            display: inline-block; /* Allows underline to fit content */
+        }
+
+        .topics-section h2::after {
+            content: '';
+            position: absolute;
+            left: 50%;
+            bottom: 0;
+            transform: translateX(-50%);
+            width: 120px; /* Underline width */
+            height: 6px;
+            background-color: var(--accent-gold);
+            border-radius: 4px;
+        }
+
+        .topics-section .intro-text {
+            font-size: 1.35rem;
+            color: var(--dark-text);
+            margin: 0 auto 60px auto; /* Centered, more space below */
+            max-width: 750px;
+            line-height: 1.8;
+            font-weight: 400;
+        }
+
+        /* --- Main Topics Grid Container --- */
+        .topics-grid { /* Renamed from .topics-container to avoid confusion with overall section container */
+            display: flex;
+            flex-wrap: wrap;
+            gap: 35px; /* Increased space between columns */
+            justify-content: center;
+            width: 100%; /* Take full width of parent section */
+            padding: 0; /* No internal padding here, handled by column padding */
+        }
+
+        /* --- Individual Column Styling (Uniform Size) --- */
+        .topics-column {
+            /* flex-basis for uniform width, accounting for gap and total max-width */
+            flex: 0 0 calc((100% - (2 * 35px)) / 3); /* For 3 columns with 35px gap between them */
+            min-width: 390px; /* Minimum width before wrapping to ensure content fits */
+            
+            background-color: var(--card-container-bg);
+            border-radius: 18px; /* More rounded corners */
+            box-shadow: 0 10px 30px var(--card-shadow-base); /* Deeper shadow */
+            padding: 30px; /* More padding */
+            display: flex;
+            flex-direction: column;
+            gap: 25px; /* Increased space between topic items within a column */
+            transition: transform 0.3s ease, box-shadow 0.3s ease; /* Smooth hover effect for columns */
+        }
+
+        .topics-column:hover {
+            transform: translateY(-8px); /* Subtle lift */
+            box-shadow: 0 18px 45px var(--card-shadow-hover); /* Deeper shadow on hover */
+        }
+
+        /* --- Topic Item Card Styling --- */
+        .topic-item {
+            display: flex;
+            align-items: center;
+            border-radius: 12px; /* Slightly more rounded */
+            padding: 20px 25px; /* More padding */
+            min-height: 80px; /* ENSURES ALL TOPIC ITEMS ARE THE SAME HEIGHT */
+            font-size: 1.1rem; /* Slightly larger font */
+            font-weight: 600; /* Bolder text */
+            transition: all 0.3s ease; /* Smooth hover effects for all properties */
+            cursor: pointer; /* Indicate interactivity */
+            position: relative;
+            overflow: hidden; /* For gradient overlay */
+        }
+
+        .topic-item::before { /* Subtle overlay on hover */
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(255, 255, 255, 0.1);
+            opacity: 0;
+            transition: opacity 0.3s ease;
+            z-index: 1;
+        }
+
+        .topic-item:hover::before {
+            opacity: 1;
+        }
+
+        .topic-item i {
+            margin-right: 18px; /* More space between icon and text */
+            font-size: 1.6rem; /* Larger icon size */
+            flex-shrink: 0;
+            position: relative; /* For z-index over overlay */
+            z-index: 2;
+            transition: transform 0.3s ease; /* Icon animation on hover */
+        }
+
+        .topic-item:hover i {
+            transform: scale(1.1); /* Pop effect for icon */
+        }
+
+        .topic-item span {
+            position: relative; /* For z-index over overlay */
+            z-index: 2;
+            color: inherit; /* Ensure text color is inherited from theme */
+        }
+
+        /* --- Alternating Themes --- */
+        /* Maroon Theme: Maroon background, White text */
+        .topic-item.maroon-theme {
+            background-color: var(--primary-maroon);
+            color: white;
+            box-shadow: none; /* No extra shadow on maroon to distinguish */
+        }
+        .topic-item.maroon-theme i {
+            color: var(--accent-gold); /* Icons in gold for contrast on maroon */
+        }
+        .topic-item.maroon-theme:hover {
+            box-shadow: 0 8px 25px rgba(0,0,0,0.25); /* Subtle shadow on hover */
+        }
+
+        /* White Theme: White background, Maroon text with enhanced shadow */
+        .topic-item.white-theme {
+            background-color: var(--card-container-bg);
+            color: var(--primary-maroon);
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1); /* Default shadow for white box */
+        }
+        .topic-item.white-theme i {
+            color: var(--primary-maroon); /* Icons in maroon on white */
+        }
+        .topic-item.white-theme:hover {
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2); /* Enhanced shadow on hover for white box */
+        }
+
+
+        /* --- Responsive Adjustments --- */
+        @media (max-width: 1200px) {
+            .topics-section {
+                padding: 50px 25px;
+            }
+            .topics-grid {
+                gap: 25px;
+            }
+            .topics-column {
+                flex-basis: calc((100% - (2 * 25px)) / 3); /* Adjust flex-basis for new gap */
+                min-width: 300px;
+                padding: 30px;
+            }
+            .topics-section h2 {
+                font-size: 3.2rem;
+            }
+            .topics-section .intro-text {
+                font-size: 1.25rem;
+            }
+        }
+
+        @media (max-width: 992px) {
+            .topics-section {
+                padding: 40px 20px;
+            }
+            .topics-grid {
+                gap: 20px;
+            }
+            .topics-column {
+                /* On tablets, let them be two columns */
+                flex-basis: calc((100% - 20px) / 2); /* Two columns with 20px gap */
+                min-width: 300px; /* Ensure they don't get too small before stacking */
+                padding: 25px;
+            }
+            .topic-item {
+                font-size: 1.05rem;
+                padding: 16px 20px;
+            }
+            .topic-item i {
+                font-size: 1.5rem;
+                margin-right: 15px;
+            }
+            .topics-section h2 {
+                font-size: 2.8rem;
+                margin-bottom: 20px;
+            }
+            .topics-section h2::after {
+                width: 100px;
+                height: 5px;
+            }
+            .topics-section .intro-text {
+                font-size: 1.15rem;
+                margin-bottom: 40px;
+            }
+        }
+
+        @media (max-width: 768px) {
+            body {
+                padding: 30px 15px;
+            }
+            .topics-section {
+                padding: 30px 15px;
+                box-shadow: 0 15px 40px rgba(0, 0, 0, 0.1); /* Slightly reduced shadow for mobile */
+            }
+            .topics-grid {
+                flex-direction: column; /* Stack columns vertically */
+                gap: 20px; /* Space between stacked columns */
+            }
+            .topics-column {
+                width: 100%; /* Full width for stacked columns */
+                flex-basis: auto; /* Revert flex-basis to auto for full width */
+                min-width: unset; /* Remove min-width restriction */
+                padding: 20px;
+            }
+            .topics-section h2 {
+                font-size: 2.2rem;
+                margin-bottom: 15px;
+            }
+            .topics-section h2::after {
+                width: 80px;
+                height: 4px;
+            }
+            .topics-section .intro-text {
+                font-size: 1rem;
+                margin-bottom: 30px;
+            }
+             /* Adjust shadows for mobile, make them slightly less pronounced */
+            .topic-item.white-theme {
+                box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+            }
+            .topic-item.white-theme:hover {
+                box-shadow: 0 5px 15px rgba(0, 0, 0, 0.15);
+            }
+            .topic-item.maroon-theme:hover {
+                box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+            }
+        }
+
+        @media (max-width: 480px) {
+            body {
+                padding: 20px 10px;
+            }
+            .topics-section {
+                padding: 20px 10px;
+            }
+            .topics-column {
+                padding: 15px;
+            }
+            .topic-item {
+                font-size: 0.95rem;
+                padding: 12px 15px;
+            }
+            .topic-item i {
+                font-size: 1.3rem;
+                margin-right: 10px;
+            }
+        }
+
+
+
+/* Styling for the main heading of the Organizing Committee section */
+#committee-section h2 { /* Or use .committee-heading if you added the class to HTML */
+    font-family:Algerian; /* Or a similar elegant font */
+    font-size: 4em; /* Large font size */
+	font-weight:300;
+    color: #8B0000; /* Dark red/maroon color */
+    text-align: center;
+    width: 100%; /* Make heading take full width */
+    margin-bottom: 30px; /* Space below heading for the underline */
+    padding-bottom: 30px; /* Space for the underline */
+    position: relative; /* For the underline effect */
+}
+
+/* Underline effect for the Organizing Committee heading */
+#committee-section h2::after { /* Or use .committee-heading::after */
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 130px; /* Length of the underline */
+    height: 7px;
+    background-color: #DAA520; /* Golden/yellow color for the underline */
+    border-radius: 2px;
+}
+
+/* Make sure to adjust the margin-bottom of the parent div if needed */
+/* The .mb-5 class on the parent div might add extra space. */
+/* If you find double spacing, you might remove .mb-5 from the HTML or reduce its value. */
+.text-center.mb-5 {
+    margin-bottom: 30px; /* Adjust if needed to prevent double spacing with h2's margin-bottom */
+}
+
+/* Keep your existing CSS for other parts of the committee section */
+/* ... (your .container, .text-center, .vertical-stack, etc. rules) ... */
+    .mb-4 {
+      margin-bottom: 1.5rem;
+    }
+
+   
+    #committee-section {
+  scroll-margin-top: 80px; /* Adjust this value based on your fixed header's height */
+}
+    /* Styles for strictly vertical stacking of Chief Patron, Conference Chair, and Dr. Mahendran */
+    .vertical-stack {
+      display: flex;
+      flex-direction: column; /* This forces vertical stacking */
+      align-items: center; /* Centers items horizontally within the column */
+      gap: 40px; /* Space between the main vertical items */
+      margin-bottom: 40px; /* Space before the next section */
+    }
+
+    .vertical-member {
+      text-align: center;
+      margin-bottom: 20px; /* Added space between individual vertical members */
+    }
+
+    .volunteer-image {
+      width: 190px;
+      height: 230px;
+      object-fit: cover;
+      border-radius: 50%;
+      display: block;
+      margin: 0 auto;
+    }
+
+    .custom-block-body {
+      margin-top: 15px;
+    }
+
+    .section-padding {
+      padding: 40px 0;
+    }
+
+    /* Styles for secretaries and coordinators - displayed in rows */
+    .role-row {
+      display: flex;
+      flex-wrap: wrap; /* Allows wrapping on smaller screens */
+      justify-content: center;
+      gap: 40px; /* Space between members in the row */
+      margin-bottom: 40px; /* Space before the next section */
+      text-align: center; /* Center the entire row of members */
+    }
+
+    .role-member {
+      text-align: center;
+      flex: 0 0 auto; /* Prevent stretching */
+    }
+
+    /* General styles for the item columns, now that they are more broadly used */
+    .item-columns {
+      text-align: center;
+      width: 200px; /* Maintain consistent width for these blocks */
+    }
+
+    .item-columns img {
+      width: 190px;
+      height: 230px;
+      object-fit: cover;
+      border-radius: 50%;
+      margin-bottom: 10px;
+    }
+
+    .item-columns strong {
+      font-size: 16px;
+      display: block;
+      margin-bottom: 5px;
+    }
+
+    .item-columns div {
+      font-size: 14px;
+    }
+
+/* Basic Reset & Body Styles (Adjust as needed for your site) */
+        footerbody {
+            margin: 0;
+            font-family: Arial, sans-serif; /* Or your preferred font-family */
+            line-height: 1.6;
+            color: #333;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+        }
+
+        /* Example main content to push footer down */
+        .main-content {
+            flex-grow: 1;
+            padding: 20px;
+            text-align: center;
+            font-size: 1.2em;
+            color: #555;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        /* --- Footer Styles --- */
+        footer {
+            background-color:#3970B8; /* Your chosen footer background color */
+            color: #ffffff; /* Set a default white color for all text in the footer */
+            padding: 25px 2px; /* Decreased horizontal padding */
+            font-size: 0.95em;
+            box-shadow: 0 -2px 5px rgba(0, 0, 0, 0.1);
+        }
+
+        .footer-container {
+            max-width: 1420px; /* Increased max-width */
+            margin: 0 auto;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            gap: 20px;
+        }
+
+        .footer-section {
+            flex: 1;
+            min-width: 250px;
+            margin-bottom: 20px;
+        }
+
+        /* Headings within footer sections */
+        .footer-section h3 {
+            color: #ffffff; /* Ensure headings are white */
+            font-size: 1.8em;
+            margin-bottom: 15px;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+            padding-bottom: 8px;
+        }
+
+        /* Paragraphs within footer sections (inherited from footer or explicitly set) */
+        .footer-section p {
+            margin-bottom: 10px;
+            line-height: 1.5;
+            color: #ffffff; /* Explicitly set paragraph text to white */
+        }
+
+        /* Links within footer */
+        .footer-section a {
+            color: #ffffff; /* Set default link color to white */
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+
+        .footer-section a:hover {
+            color: #f0f0f0; /* Slightly off-white on hover for links */
+            text-decoration: underline;
+        }
+
+        /* List styles (for quick links) */
+        .footer-section ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        .footer-section ul li {
+            margin-bottom: 8px;
+        }
+
+        /* --- Logo Styling --- */
+        .footer-branding {
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+        }
+
+        .footer-branding .conference-logo,
+        .footer-branding .college-logo {
+            max-width: 300px;
+            height: auto;
+            margin-bottom: 15px;
+            border-radius: 10px; /* Added for curved edges */
+        }
+
+        .footer-branding .college-logo {
+            margin-top: 10px;
+        }
+.payment-section {
+  background: #f9f9f9;
+  padding: 50px 20px;
+  border-top: 4px solid #800000;
+}
+
+.payment-instructions {
+  margin: 20px auto;
+  font-size: 1.05rem;
+}
+
+.payment-instructions ul {
+  list-style: disc;
+  padding-left: 20px;
+}
+
+.qr-img {
+  max-width: 280px;
+  width: 100%;
+  margin: 10px auto;
+  border: 2px solid #ccc;
+  border-radius: 10px;
+  padding: 8px;
+  background: #fff;
+}
+
+
+
+
+        /* --- Social Media Icons (SVG Specific Styling) --- */
+        .social-icons {
+            display: flex;
+            gap: 15px;
+            margin-top: 15px;
+            color: #ffffff; /* Ensures any direct text inside is white, though not typically used for icons */
+            width: 300px; /* Increased width */
+			align-items: flex-start;
+			justify-content:2px;
+        }
+
+        .social-icons a {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 50px;
+            height: 35px;
+            transition: transform 0.3s ease, fill 0.3s ease;
+        }
+
+        .social-icons a:hover {
+            transform: translateY(-5px);
+        }
+
+        .social-icons svg {
+            width: 100%;
+            height: 100%;
+            fill: #ffffff; /* Set default color of the SVG icons to white */
+            transition: fill 0.3s ease;
+        }
+
+        /* Hover effect for SVG fill color (subtle change on hover) */
+        .social-icons a:hover svg {
+            fill: #f0f0f0; /* Slightly off-white on hover for icons */
+        }
+
+        /* --- Responsive Design (Media Queries) --- */
+
+        /* For Tablets and smaller desktops (e.g., 992px) */
+        @media (max-width: 992px) {
+            .footer-section {
+                min-width: 200px;
+                flex-basis: calc(50% - 15px);
+            }
+
+            .footer-container {
+                justify-content: center;
+            }
+        }
+
+        /* For Mobile Devices (e.g., 768px and below) */
+        @media (max-width: 768px) {
+            footer {
+                padding: 30px 15px;
+            }
+
+            .footer-section {
+                flex-basis: 100%;
+                text-align: center;
+                margin-bottom: 25px;
+            }
+
+            .footer-section:last-child {
+                margin-bottom: 0;
+            }
+
+            .footer-section h3 {
+                text-align: center;
+            }
+
+            .footer-branding {
+                align-items: center;
+            }
+
+            .social-icons {
+                justify-content: center;
+                width: auto; /* Reset width for smaller screens to allow natural flow */
+            }
+        }
+
+        /* Even smaller mobiles (e.g., 480px) if needed for fine-tuning */
+        @media (max-width: 480px) {
+            .footer-section h3 {
+                font-size: 1.1em;
+            }
+
+            .footer-branding .conference-logo,
+            .footer-branding .college-logo {
+                max-width: 120px;
+            }
+        }
+		
+		
+		/*commitee*/
+		:root {
+    --maroon: #800000;
+    --white: #ffffff;
+  }
+
+  body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: var(--white);
+    color: var(--maroon);
+    margin: 0;
+   padding: 0;
+  }
+
+  .a-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    padding: 20px;
+    box-sizing: border-box;
+    justify-content: space-between;
+  }
+
+  .a-committee {
+    flex: 1 1 45%;
+    background-color: rgba(128, 0, 0, 0.05);
+    border-radius: 10px;
+    padding: 20px;
+    box-sizing: border-box;
+  }
+
+  .a-committee h2 {
+    text-align: center;
+    margin-bottom: 20px;
+    font-size: 1.8rem;
+    font-weight: bold;
+    color: var(--maroon);
+  }
+
+  table {
+    width: 100%;
+    border-collapse: collapse;
+  }
+
+  th, td {
+    text-align: left;
+    padding: 8px;
+    border-bottom: 1px solid rgba(128, 0, 0, 0.3);
+    vertical-align: top;
+	font-weight:600;
+  }
+
+  th {
+    background-color: rgba(128, 0, 0, 0.15);
+    font-weight: bold;
+  }
+
+  td:first-child {
+    white-space: nowrap;
+  }
+
+  @media (max-width: 768px) {
+    .container {
+      flex-direction: column;
+    }
+
+    .a-committee {
+      flex: 1 1 100%;
+    }
+  }
+  /* guidelines*/
+
+
+guide{
+Display:flex;
+      text-align: center;
+	  
+	  align-items:center;
+}
+
+
+    guide h1 {
+	Display:flex;
+      text-align: center;
+	  
+	  align-items:center;
+      font-size: 50px;
+	  font-weight:500;
+      color: #800000;
+      text-shadow: 2px 2px #fff;
+      letter-spacing: 2px;
+      margin-top: 40px;
+      position: relative;
+    }
+
+    guide h1::after {
+      content: '';
+      display: block;
+      width: 80px;
+      height: 5px;
+      background-color: #d4af37;
+      margin: 15px auto 30px auto;
+      border-radius: 10px;
+    }
+
+    .g-container {
+      max-width: 800px;
+      margin: 0 auto 80px;
+      padding: 0 20px;
+    }
+
+    .section-box {
+      background-color: #fff;
+      border: 2px solid #800000;
+      border-radius: 10px;
+      padding: 25px;
+      box-shadow: 0 6px 15px rgba(0, 0, 0, 0.1);
+      margin-bottom: 40px;
+    }
+
+    .section-box h5 {
+      color: #800000;
+      font-size: 24px;
+      text-align: center;
+      margin-bottom: 20px;
+    }
+
+    ul.guidelines {
+      list-style-type: none;
+      padding: 0;
+    }
+
+    ul.guidelines li {
+      background-color: #f4eeef;
+      padding: 12px 16px;
+      border-radius: 8px;
+      margin-bottom: 15px;
+      box-shadow: inset 0 0 5px rgba(0, 0, 0, 0.05);
+      transition: all 0.3s ease;
+	  font-weight:500;
+    }
+
+    ul.guidelines li:hover {
+      transform: translateY(-2px);
+      background-color:  #f9f9f9;
+      box-shadow: 0 4px 10px rgba(128, 0, 0, 0.2);
+    }
+
+    a {
+      color: #b30000;
+      text-decoration: none;
+      font-weight: bold;
+    }
+
+    a:hover {
+      text-decoration: underline;
+    }
+	
+	
+	/* fees */
+	
+    .registration-wrapper {
+      max-width: 750px;
+      margin: auto;
+      background: white;
+      padding: 1.3rem;
+      border-radius: 10px;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+      overflow-x: auto;
+    }
+
+    .registration-title {
+      text-align: center;
+      color: maroon;
+      font-size: 3rem;
+      font-weight: 700;
+      margin-bottom: 1.2rem;
+      position: relative;
+    }
+
+    .registration-title::after {
+      content: "";
+      width: 70px;
+      height: 4px;
+      background:#d4af37;;
+      display: block;
+      margin: 0.4rem auto 0;
+      border-radius: 2px;
+    }
+
+    .registration-table {
+      width: 100%;
+      table-layout: auto;
+      border-collapse: collapse;
+      margin-top: 0.4rem;
+      text-align: center;
+      font-size: 1.05rem;
+    }
+
+    .registration-table thead th {
+      background-color: maroon;
+      color: white;
+      padding: 0.2rem;
+      border: 1px solid #fff;
+      white-space: nowrap;
+    }
+
+    .registration-table tbody td {
+      padding: 0.6rem;
+      border: 1px solid #eee;
+      white-space: nowrap;
+      transition: background-color 0.3s ease, color 0.3s ease;
+    }
+
+    .registration-table tbody tr:hover {
+      background-color: maroon;
+      color: white;
+    }
+
+    .registration-note {
+      font-size: 0.95rem;
+      text-align: center;
+      margin-top: 1.2rem;
+      color: maroon;
+    }
+ 
+	.dropdown {
+  position: relative;
+  display: inline-block;
+}
+
+.dropdown-toggle {
+  color: white;
+  padding: 10px 16px;
+  text-decoration: none;
+  font-weight: bold;
+  cursor: pointer;
+  
+}
+
+.dropdown-menu {
+  display: none;
+  position: absolute;
+  background-color: white;
+  min-width: 230px;
+  box-shadow: 0px 8px 16px rgba(0,0,0,0.2);
+  z-index: 1000;
+}
+
+.dropdown-menu a {
+  color: black;
+  padding: 10px 16px;
+  display: block;
+  text-decoration: none;
+}#advisory-committee {
+  scroll-margin-top: 100px; /* Adjust to height of navbar */
+}
+#organizing-committee {
+  scroll-margin-top: 100px; /* Adjust to height of navbar */
+}
+
+
+.dropdown-menu a:hover {
+  background-color: #f1f1f1;
+}
+
+.dropdown.show .dropdown-menu {
+  display: block;
+}
+
+/* ===== ✅ RESPONSIVE DESIGN FOR LAPTOP & MOBILE ===== */
+
+/* Common Responsive Adjustments */
+@media (max-width: 1200px) {
+  .container, .section, .about-insititute-section, .about-dept-section, .about-conference-section {
+    width: 100%;
+    padding: 20px;
+    margin: auto;
+  }
+
+  .hero-content h1 { font-size: 4rem; }
+  .hero-content h2 { font-size: 2.2rem; }
+}
+
+@media (max-width: 992px) {
+  .topheader {
+    flex-direction: column;
+    height: auto;
+  }
+
+  .topheader img {
+    width: 180px;
+    height: auto;
+  }
+
+  .left-logo img, .center-logo img, .right-logo img {
+    width: 150px;
+  }
+
+  .hero-content h1 { font-size: 3.5rem; }
+  .hero-content h2 { font-size: 2rem; }
+
+  .club-card, .speaker-card, .incharge-card, .person-card {
+    width: 100%;
+    margin: auto;
+  }
+
+  .topics-grid {
+    flex-direction: column;
+    gap: 20px;
+  }
+
+  .topics-column {
+    width: 100%;
+  }
+}
+
+@media (max-width: 768px) {
+  .navbar, .navbar-row {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .nav-links {
+    flex-direction: column;
+    width: 100%;
+    display: none;
+  }
+
+  .nav-links.active {
+    display: flex;
+  }
+
+  .register-btn {
+    width: 100%;
+    margin: 10px 0;
+    text-align: center;
+  }
+
+  .hero-content {
+    padding: 0 20px;
+    text-align: center;
+  }
+
+  .hero-content h1 { font-size: 2.5rem; }
+  .hero-content h2 { font-size: 1.5rem; }
+  .date { font-size: 1.3rem; flex-direction: column; }
+
+  .about-insititute-section, .about-dept-section, .about-conference-section {
+    padding: 15px;
+    width: 100%;
+  }
+
+  .chief-guest-img, .honour-guest-img {
+    width: 100%;
+    height: auto;
+  }
+
+  .topics-column, .club-card, .speaker-card, .incharge-card {
+    width: 100%;
+    max-width: 350px;
+    margin: auto;
+  }
+
+  .section h2 { font-size: 2rem; }
+  .section .intro-text { font-size: 1rem; padding: 0 10px; }
+
+  .date-card {
+    width: 100%;
+    margin: 10px auto;
+  }
+}
+
+@media (max-width: 480px) {
+  .hero-content h1 { font-size: 2rem; }
+  .hero-content h2 { font-size: 1.2rem; }
+  .date { font-size: 1.1rem; }
+
+  .nav-links a {
+    font-size: 1rem;
+    padding: 8px 0;
+  }
+
+  .chief-guest-name { font-size: 1.5rem; }
+  .chief-guest-bio { font-size: 0.9rem; }
+
+  .footer-container {
+    flex-direction: column;
+    gap: 20px;
+  }
+
+  .footer-section {
+    width: 100%;
+    text-align: center;
+  }
+}
+
+/* ===== ✅ FIX FOR TOPHEADER LOGOS & NAVBAR HEIGHT ===== */
+
+/* --- Updated topheader for 3 logos in a straight line --- */
+.topheader {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 5px 15px;
+  background-color: white;
+  flex-wrap: nowrap;
+  height: 100px;
+}
+
+.left-logo, .center-logo, .right-logo {
+  flex: 1;
+  text-align: center;
+}
+
+.left-logo img{
+	 max-width: 80%;
+  height: 110px;
+  object-fit: contain;
+}
+.center-logo img{
+	height: 150px;
+}
+.right-logo img {
+  max-width: 80%;
+  height: 110px;
+  object-fit: contain;
+}
+
+/* Remove absolute position and center logo naturally */
+.center-logo {
+  position: relative;
+  left: 0;
+  transform: none;
+  text-align: center;
+}
+
+/* --- Reduce maroon navbar height and padding --- */
+.navbar {
+  padding: 5px 15px;
+  min-height: 50px;
+}
+
+/* --- Reduce Register button padding --- */
+.register-btn {
+  padding: 6px 16px;
+  font-size: 1rem;
+  margin-left: auto;
+}
+
+/* --- Reduce space above hero section --- */
+.hero-section {
+  margin-top: 20px;
+}
+
+/* --- Mobile View Adjustments --- */
+@media (max-width: 768px) {
+  .topheader {
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 10px;
+  }
+
+  .topheader img {
+    height: 60px;
+  }
+
+  .navbar {
+    padding: 8px 10px;
+  }
+
+  .hero-section {
+    margin-top: 10px;
+  }
+
+  .register-btn {
+    width: auto;
+    font-size: 0.95rem;
+  }
+}

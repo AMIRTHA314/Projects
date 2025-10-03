@@ -1,0 +1,475 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Conference Workshops & Schedule</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@600;700&family=Open+Sans:wght@400;600&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary-teal: #00796B; /* A deep, inviting teal */
+            --soft-blush: #FFDAB9; /* A soft, warm peach */
+            --off-white: #f8f8f8;
+            --text-dark: #2c3e50;
+            --text-light: #ffffff;
+            --card-bg: rgba(255, 255, 255, 0.15); /* Slightly more transparent for card base */
+            --border-glow-start: #81D4FA; /* Light blue */
+            --border-glow-end: #E0F7FA; /* Lighter blue */
+            --modal-bg: rgba(255, 255, 255, 0.3); /* More transparent for modal */
+            --modal-backdrop: rgba(0, 0, 0, 0.4);
+        }
+
+        body {
+            font-family: 'Open Sans', sans-serif;
+            margin: 0;
+            padding: 0;
+            color: var(--text-dark);
+            
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            overflow-x: hidden; /* Prevent horizontal scroll */
+        }
+
+        h1, h2 {
+            font-family: 'Poppins', sans-serif;
+            color: var(--primary-teal);
+            font-weight: 700;
+            text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.1);
+        }
+
+/* --- Header --- */
+/* Top header with 3 image logos */
+/* --- Fixed Header Wrapper --- */
+    .header-wrapper {
+      position: fixed;
+      top: 0;
+	  
+      left: 0;
+      width: 100%;
+      z-index: 999;
+      background-color: white;
+      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    }
+
+  .topheader {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: white;
+    padding: 10px 20px;
+    position: relative;
+    flex-wrap: wrap;
+	height: 110px;
+	margin-top:10px;
+  }
+
+  .topheader img {
+    height: 100px;
+  }
+
+  .left-logo,
+  .right-logo {
+    flex: 1;
+  }
+
+  .left-logo {
+    text-align: left;
+  }
+
+  .left-logo img {
+    width: 350px;
+    height: auto;
+  }
+
+.center-logo img {
+    width: 380px;
+    height: auto;
+  }
+
+  .center-logo {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+  }
+
+  .right-logo {
+    text-align: right;
+  }
+
+  .navbar {
+    background-color: #800000;
+    display: flex;
+    justify-content:center;
+    align-items: center;
+    padding: 10px 20px;
+    flex-wrap: wrap;
+    position: relative;
+	
+	
+  }
+
+  .nav-links {
+    display: flex;
+    gap: 13px;
+    flex-wrap: wrap;
+  }
+
+  .nav-links a {
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+    transition: color 0.3s ease;
+  }
+
+  .nav-links a:hover {
+    color: #ffcc00;
+  }
+
+  .register-btn {
+    background-color: yellow;
+    border-radius: 25px;
+    padding: 10px 20px;
+    color: black;
+    font-weight: bold;
+    white-space: nowrap;
+	margin-left:50px;
+  }
+
+  .register-btn:hover {
+    background-color: #800000;
+    color: white;
+  }
+
+  .hamburger {
+    display: none;
+    flex-direction: column;
+    cursor: pointer;
+  }
+
+  .hamburger div {
+    width: 25px;
+    height: 3px;
+    background-color: white;
+    margin: 4px 0;
+  }
+
+  .navbar-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 20px;
+	
+  }
+
+  /* Responsive Styles */
+
+  @media (max-width: 1200px) {
+    .hamburger {
+      display: flex;
+    }
+
+    .nav-links {
+      display: none;
+      flex-direction: column;
+      width: 100%;
+      background-color: #800000;
+      margin-top: 10px;
+    }
+
+    .nav-links.active {
+      display: flex;
+    }
+
+    .navbar {
+      flex-direction: column;
+      align-items: flex-start;
+    }
+
+    .register-btn {
+      align-self: flex-end;
+      margin-top: 10px;
+    }
+
+    .topheader {
+      flex-direction: column;
+      align-items: center;
+    }
+
+    .center-logo {
+      position: static;
+      transform: none;
+      margin: 10px 0;
+    }
+
+    .topheader img {
+      height: 60px;
+      width: auto;
+    }
+
+    .left-logo img,
+    .right-logo img,
+    .center-logo img {
+      width: 150px;
+      height: auto;
+    }
+  }
+  
+  /* --- General Section Styling --- */
+        .section {
+            padding: 40px 20px;
+            max-width: 1200px;
+           margin-bottom:20px;
+            color:#000000;
+
+        }
+
+        .section h2 {
+            font-family: Algerian;
+            color: var(--primary-maroon);
+            font-size: 4rem;
+            font-weight: 550;
+            margin-bottom: 45px;
+			 margin-top:500px;
+            text-align: center;
+            position: relative;
+            padding-bottom: 15px;
+        }
+
+        .section h2::after {
+            content: '';
+            position: absolute;
+            left: 50%;
+            bottom: 0;
+            transform: translateX(-50%);
+            width: 120px;
+            height: 6px;
+            background-color: var(--accent-gold);
+            border-radius: 4px;
+        }
+
+        .section .intro-text {
+            text-align: center;
+            margin-bottom: 60px;
+            font-size: 1.25rem;
+            color:#000000;
+            max-width: 900px;
+            margin-left: auto;
+            margin-right: auto;
+            line-height: 1.8;
+            font-weight: 300;
+        }
+	
+  
+  
+  
+  
+  
+        .container-wrapper {
+            background: rgba(255, 255, 255, 0.1); /* Glassmorphism background for the main content area */
+            border-radius: 20px;
+            box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
+            backdrop-filter: blur(10px);
+            -webkit-backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.18);
+           
+			 margin-top: 140px;
+            max-width: 1200px;
+            width: 100%;
+        }
+
+        .text-center {
+            text-align: center;
+        }
+
+        .mb-5 {
+            margin-bottom: 3rem;
+        }
+
+        
+
+        
+        /* Info Box */
+        .info-box {
+            background: rgba(255, 255, 255, 0.1); /* Glassmorphism effect */
+            border: 1px solid rgba(255, 255, 255, 0.18);
+            border-radius: 50px;
+            padding: 20px 40px;
+            text-align: center;
+            margin: 60px auto;
+            max-width: 500px;
+            box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+            backdrop-filter: blur(5px);
+            -webkit-backdrop-filter: blur(5px);
+            position: relative;
+            overflow: hidden;
+            background-clip: padding-box; /* Crucial for shimmer effect */
+			background: linear-gradient(135deg, #a8dadc, #457b9d, #1d3557); /* Dynamic gradient background */
+        }
+
+        .info-box::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: conic-gradient(transparent, rgba(255, 255, 255, 0.8), transparent 20%, transparent 80%, rgba(255, 255, 255, 0.8), transparent);
+            border-radius: inherit;
+            animation: shimmer-border 4s linear infinite;
+            z-index: -1;
+        }
+
+        .info-box p {
+            margin: 0;
+            color: var(--text-light); /* Lighter text for contrast */
+            font-size: 1.5em;
+            font-weight: 800;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3);
+            position: relative; /* To keep text above pseudo-element */
+            z-index: 1;
+        }
+
+        @keyframes shimmer-border {
+            0% {
+                transform: rotate(0deg);
+            }
+            100% {
+                transform: rotate(360deg);
+            }
+        }
+
+        /* Responsive adjustments */
+        @media (max-width: 768px) {
+            .container-wrapper {
+                margin: 20px;
+                padding: 30px 20px;
+            }
+            h1 {
+                font-size: 2em;
+            }
+            
+            .info-box p {
+                font-size: 1.2em;
+            }
+            .modal-content {
+                width: 95%;
+                padding: 20px;
+            }
+            .modal-content h2 {
+                font-size: 1.8em;
+            }
+        }
+
+        @media (max-width: 480px) {
+            h1 {
+                font-size: 1.8em;
+            }
+            
+            .info-box p {
+                font-size: 1em;
+            }
+            
+        }
+    </style>
+
+
+
+
+</head>
+<header>
+  <!-- Top Header with Image Logos -->
+   <div class="header-wrapper">
+  <div class="topheader">
+    <div class="left-logo">
+      <img src="img-folder\14112024_-_03_1_-removebg-preview.png" alt="Left Logo">
+    </div>
+    <div class="center-logo">
+      <img src="img-folder\tcelogo.JPG" alt="Center Logo">
+    </div>
+    <div class="right-logo">
+      <img src="https://www.tceeiacp.in/images/New_Four_Logo.png" alt="Right Logo">
+    </div>
+  </div>
+
+  <!-- Navigation Bar -->
+  <div class="navbar">
+    
+
+    <!-- Collapsible links -->
+    <div class="nav-links" id="navLinks">
+      <a href="index.html#home">Home</a>
+      <a href="index.html#about">About</a>
+      <a href="index.html#committee-section">Committees</a>
+      <a href="index.html#speakers">Speakers</a>
+      <a href="#programme.html">Programme Schedule</a>
+      <a href="index.html#call-for-papers">Call for Papers</a>
+      <a href="index.html#dates">Important Dates</a>
+      <a href="correctaccommadation.html">Accommodation</a>
+      <a href="maduraipage.html"">Explore Madurai</a>
+      <a href="phygallery.html">Gallery</a>
+      <a href="index.html#footer section">Contact Us</a>
+      <a href="index.html#payment">Register Here</a>
+    </div>
+	
+
+  <script>
+    function toggleMenu() {
+      document.getElementById("navLinks").classList.toggle("active");
+    }
+  </script>
+
+</header>
+<body>
+
+    <div class="container-wrapper">
+        
+<section class="section" id="about">
+    
+        <h2 style="margin-top: 10px;color:#800000;">Programme Schedule</h2>
+        
+        <div class="info-box">
+            <p>Will be updated shortly</p>
+        </div>
+   
+</section>
+    
+	 </div>
+
+    <script>
+        const workshopCards = document.querySelectorAll('.workshop-card');
+        const modal = document.getElementById('workshopModal');
+        const modalTitle = document.getElementById('modalTitle');
+        const modalSpeaker = document.getElementById('modalSpeaker');
+        const modalAffiliation = document.getElementById('modalAffiliation');
+
+        workshopCards.forEach(card => {
+            card.addEventListener('click', () => {
+                const title = card.dataset.title;
+                const speaker = card.dataset.speaker;
+                const affiliation = card.dataset.affiliation;
+
+                modalTitle.textContent = title;
+                modalSpeaker.innerHTML = `<strong>${speaker}</strong>`;
+                modalAffiliation.textContent = affiliation;
+                
+                modal.classList.add('active'); // Show modal
+            });
+        });
+
+        function closeModal() {
+            modal.classList.remove('active'); // Hide modal
+        }
+
+        // Close modal if clicked outside content
+        modal.addEventListener('click', (event) => {
+            if (event.target === modal) {
+                closeModal();
+            }
+        });
+    </script>
+</body>
+</html>

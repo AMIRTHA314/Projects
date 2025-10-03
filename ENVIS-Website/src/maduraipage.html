@@ -1,0 +1,350 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Explore Madurai</title>
+  <link href="https://fonts.googleapis.com/css?family=Roboto:400,700&display=swap" rel="stylesheet">
+  <style>
+    body {
+      font-family: 'Roboto', sans-serif;
+      margin: 0;
+      background: none;
+      position: relative;
+      min-height: 100vh;
+    }
+    body::before {
+      content: "";
+      position: fixed;
+      top: 0; left: 0; right: 0; bottom: 0;
+      z-index: -1;
+      background: url("background.jpg") center center/cover no-repeat;
+      opacity: 0.75;
+      filter: blur(1px);
+    }
+    header {
+      position: relative;
+      overflow: hidden;
+    }
+    header video {
+      width: 100%;
+      max-height: 340px;
+      object-fit: cover;
+      display: block;
+    }
+    .weather {
+      position: absolute;
+      top: 24px;
+      right: 36px;
+      background: rgba(255,255,255,0.96);
+      padding: 12px 18px;
+      border-radius: 12px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.09);
+      font-weight: 700;
+      color: #1d293c;
+      font-size: 1.1em;
+    }
+    h1 {
+      position: absolute;
+      bottom: 16px;
+      left: 24px;
+      color: #fff;
+      background: rgba(0,0,0,0.54);
+      padding: 10px 28px 10px 16px;
+      border-radius: 10px;
+      font-size: 2.14rem;
+      margin: 0;
+      text-shadow: 2px 2px 8px #23232377;
+      letter-spacing: 1px;
+    }
+    .intro-section {
+      max-width: 960px;
+      margin: 34px auto 10px auto;
+      padding: 24px 22px 22px 22px;
+      background: rgba(246,245,242,0.82);
+      border-radius: 10px;
+      box-shadow: 0 3px 16px rgba(102, 82, 34, 0.09);
+      backdrop-filter: blur(2px);
+      text-align: center;
+    }
+    .intro-section p {
+      font-size: 1.02em;
+      margin: 8px 0 0 0;
+      color: #3a2c1e;
+      line-height: 1.57;
+    }
+    .intro-section .tamil {
+      color: #5c234b;
+      font-size: 1.04em;
+      font-weight: bold;
+      margin-bottom: 8px;
+      font-family: 'Noto Sans Tamil', 'Roboto', sans-serif;
+    }
+    section {
+      margin: 38px auto 0 auto;
+      max-width: 1040px;
+      padding: 0 20px;
+    }
+    section h2 {
+      color: #3b3131;
+      font-size: 1.35em;
+      margin-bottom: 8px;
+      text-shadow: 0px 1px 4px #e8d9c9;
+      /* Enhanced visibility */
+      background: rgba(245, 239, 224, 0.82);
+      padding: 8px 24px;
+      border-radius: 10px;
+      display: inline-block;
+      box-shadow: 0 4px 14px rgba(80,30,24,0.06);
+    }
+    .cards-row {
+      display: flex;
+      gap: 28px;
+      flex-wrap: wrap;
+      justify-content: center;
+    }
+    .card {
+      flex: 1 1 240px;
+      min-width: 225px;
+      background: #fff;
+      border-radius: 14px;
+      box-shadow: 0 6px 22px rgba(100, 84, 42, 0.11);
+      margin: 18px 0;
+      cursor: pointer;
+      overflow: hidden;
+      text-align: center;
+      transition: box-shadow 0.2s, transform 0.2s;
+      position: relative;
+      max-width: 265px;
+      z-index: 1;
+    }
+    .card:hover {
+      box-shadow: 0 12px 38px rgba(104, 74, 42, 0.17);
+      transform: scale(1.03);
+    }
+    .card img {
+      width: 100%;
+      height: 160px;
+      object-fit: cover;
+      display: block;
+      border-bottom: 1px solid #f0eada;
+    }
+    .card-title {
+      position: absolute;
+      bottom: 18px;
+      left: 0;
+      width: 100%;
+      color: #fff;
+      background: rgba(31,29,56,0.42);
+      padding: 6.5px;
+      font-size: 1.09em;
+      font-weight: bold;
+      letter-spacing: .5px;
+      pointer-events: none;
+      transition: background 0.19s;
+    }
+    .card-description {
+      display: none;
+      padding: 15px 13px 10px 13px;
+      color: #212121;
+      text-align: left;
+      background-color: #f8f8f8;
+      font-size: 0.98em;
+      min-height: 72px;
+    }
+    .card.active {
+      z-index: 2;
+      transform: scale(1.14);
+      box-shadow: 0 16px 48px rgba(70,44,24,0.16);
+    }
+    .card.active .card-description {
+      display: block;
+    }
+    .card.active .card-title {
+      background: rgba(31, 29, 56, 0.82);
+    }
+    @media (max-width: 900px) {
+      .cards-row { flex-wrap: wrap; }
+      .card { min-width: 98vw; }
+      section { padding: 0 4vw;}
+      .intro-section { padding: 10px 5vw;}
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <video src="madurai_intro.mp4" autoplay muted loop poster="madurai.jpg"></video>
+    <div class="weather" id="weather"></div>
+    <h1>Explore Madurai</h1>
+  </header>
+  <div class="intro-section">
+    <div class="tamil">"சாகா வளர்ந்த பழமையான தமிழ்நாட்டு அமைப்புகள் மற்றும் கலாச்சார மரபுகளால் சிறப்பாக விளங்கும் மதுரை நகரம், மதுரை மீனாட்சி அம்மன் கோயில், எடுத்துக்காட்டான உணவு வகைகள், கொண்டாட்டங்களுடன் ஆண்டு முழுவதும் மகிழ்ச்சியில் இரங்கும் ஒரு வரலாற்றுச் சொத்து."<br></div>
+    <p>
+      "Madurai, renowned for its ancient Tamil traditions and cultural heritage, is a living city of history. Famous for the Meenakshi Amman Temple, iconic cuisine, and colorful festivals, Madurai offers an immersive experience into South India’s vibrant past and present."
+    </p>
+  </div>
+  <main>
+    <!-- Section: Culture & Heritage -->
+    <section>
+      <h2>Culture & Heritage</h2>
+      <div class="cards-row">
+        <div class="card" onclick="showDesc(this)">
+          <img src="meenakshi_kovil.jpg" alt="Meenakshi Amman Temple">
+          <div class="card-title">Meenakshi Amman Temple</div>
+          <div class="card-description">
+            Ancient, awe-inspiring temple central to Madurai’s cultural life. <br>
+            <i>Best time:</i> Early morning, avoid festival crowds. <br>
+            <i>Access:</i> Walkable from city center.
+          </div>
+        </div>
+        <div class="card" onclick="showDesc(this)">
+          <img src="gandhi_museum.jpg" alt="Gandhi Memorial Museum">
+          <div class="card-title">Gandhi Memorial Museum</div>
+          <div class="card-description">
+            Museum housing exhibits on India’s freedom struggle and Gandhi’s life.<br>
+            <i>Best time:</i> 10 AM–1 PM or 2–5:30 PM.<br>
+            <i>Access:</i> 3 km from Meenakshi Temple, city bus or auto.
+          </div>
+        </div>
+        <!-- Added Card -->
+        <div class="card" onclick="showDesc(this)">
+          <img src="pudhu_mandabha.jpg" alt="Puthu Mandapam Mandapa">
+          <div class="card-title">Puthu Mandapam Mandapa</div>
+          <div class="card-description">
+            Historic pillared hall for temple festivities, shopping, and art. <br>
+            <i>Best time:</i> Morning hours. <br>
+            <i>Access:</i> Opposite Meenakshi Temple.
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- Section: Places to Visit -->
+    <section>
+      <h2>Places to Visit</h2>
+      <div class="cards-row">
+        <div class="card" onclick="showDesc(this)">
+          <img src="thirumalai_mahal.jpg" alt="Thirumalai Nayakar Mahal">
+          <div class="card-title">Thirumalai Nayakar Mahal</div>
+          <div class="card-description">
+            Grand palace with spectacular pillars, light and sound show.<br>
+            <i>Time:</i> 9 AM – 5 PM.<br>
+            <i>Access:</i> 2 km from city center, by auto or bus.
+          </div>
+        </div>
+        <div class="card" onclick="showDesc(this)">
+          <img src="koodalalagar_kovil.jpg" alt="Koodal Azhagar Temple">
+          <div class="card-title">Koodal Azhagar Temple</div>
+          <div class="card-description">
+            Historic Vishnu temple with intricate carvings.<br>
+            <i>Time:</i> 5:30AM–12PM, 4–9PM.<br>
+            <i>Access:</i> 1.5 km from Meenakshi Temple.
+          </div>
+        </div>
+        <!-- Added Card -->
+      <div class="card" onclick="showDesc(this)">
+          <img src="thepakulam.jpg" alt="Vandiyur Mariamman Teppakulam" />
+          <div class="card-title">Vandiyur Mariamman Teppakulam</div>
+          <div class="card-description">
+            Massive temple tank famous for the Float Festival held annually.<br/>
+            <i>Time:</i> Open all day, best at sunrise or sunset.<br/>
+            <i>Access:</i> 4 km from city center, accessible by local bus, auto, or cab.
+          </div>
+        </div>
+    </section>
+    <!-- Section: Food to Enjoy -->
+    <section>
+      <h2>Food to Enjoy</h2>
+      <div class="cards-row">
+        <div class="card" onclick="showDesc(this)">
+          <img src="jigarthanda.jpg" alt="Jigarthanda">
+          <div class="card-title">Jigarthanda</div>
+          <div class="card-description">
+            Local cold dessert made of milk, almond gum, sarsaparilla syrup.<br>
+            <i>Best time:</i> Afternoons.<br>
+            <i>Get it:</i> Famous Jigarthanda stalls near Vilakkuthoon.
+          </div>
+        </div>
+        <div class="card" onclick="showDesc(this)">
+          <img src="kari_dosa.jpg" alt="Kari Dosa">
+          <div class="card-title">Kari Dosa</div>
+          <div class="card-description">
+            Spicy dosa topped with minced meat, a breakfast favorite.<br>
+            <i>Best place:</i> Konar Mess, morning hours.
+          </div>
+        </div>
+        <!-- Added Card -->
+        <div class="card" onclick="showDesc(this)">
+          <img src="murugan_idli.jpg" alt="Murugan Idli">
+          <div class="card-title">Murugan Idli</div>
+          <div class="card-description">
+            Famous soft idli, variety of chutneys and sambar.<br>
+            <i>Best time:</i> Early breakfast or dinner.<br>
+            <i>Get it:</i> Murugan Idli Shop, main streets.
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- Section: Things to Do -->
+    <section>
+      <h2>Things to Do</h2>
+      <div class="cards-row">
+        <div class="card" onclick="showDesc(this)">
+          <img src="pudhu_mandabham.jpg" alt="Puthu Mandapam Market">
+          <div class="card-title">Puthu Mandapam Market</div>
+          <div class="card-description">
+            Bustling market for bangles, fabrics, temple crafts.<br>
+            <i>Open:</i> 8:30 AM – 8 PM.<br>
+            <i>Location:</i> Opp. Meenakshi Temple.
+          </div>
+        </div>
+        <div class="card" onclick="showDesc(this)">
+          <img src="samanar_hills.jpg" alt="Samanar Hills">
+          <div class="card-title">Samanar Hills</div>
+          <div class="card-description">
+            Hillock with carvings, caves, city views.<br>
+            <i>Go:</i> Sunset for panoramic scenes.<br>
+            <i>Reach:</i> By auto, 8 km from city center.
+          </div>
+        </div>
+        <!-- Added Card -->
+        <div class="card" onclick="showDesc(this)">
+          <img src="vaigai_river.jpg" alt="Vaigai River Walk">
+          <div class="card-title">Vaigai River Walk</div>
+          <div class="card-description">
+            Riverside stroll, views, and photo spots along Vaigai riverbank.<br>
+            <i>Best time:</i> Evenings.<br>
+            <i>Location:</i> Near Goripalayam area.
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+  <script>
+    // Weather API
+    fetch('https://api.open-meteo.com/v1/forecast?latitude=9.9252&longitude=78.1198&current=temperature_2m,weathercode')
+      .then(resp => resp.json())
+      .then(data => {
+        const temp = Math.round(data.current.temperature_2m);
+        let code = data.current.weathercode;
+        let desc = 'Sunny';
+        if (code >= 3 && code < 50) desc = 'Cloudy';
+        if (code >= 51 && code < 60) desc = 'Light Rain';
+        if (code >= 61 && code < 70) desc = 'Heavy Rain';
+        if (code >= 80) desc = 'Stormy';
+        document.getElementById('weather').innerText =
+          `Madurai Weather: ${temp}°C, ${desc}`;
+      });
+
+    // Card click logic
+    function showDesc(card) {
+      // Only one card in row active at a time, magnify selected card only
+      let row = card.parentNode;
+      row.querySelectorAll('.card').forEach(c => {
+        c.classList.remove('active');
+        c.style.zIndex = "1";
+      });
+      card.classList.add('active');
+      card.style.zIndex = "2";
+    }
+  </script>
+</body>
+</html>

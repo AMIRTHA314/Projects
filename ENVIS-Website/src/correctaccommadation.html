@@ -1,0 +1,597 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Conference Workshops & Schedule</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@600;700&family=Open+Sans:wght@400;600&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary-teal: #00796B; /* A deep, inviting teal */
+            --soft-blush: #FFDAB9; /* A soft, warm peach */
+            --off-white: #f8f8f8;
+            --text-dark: #2c3e50;
+            --text-light: #ffffff;
+            --card-bg: rgba(255, 255, 255, 0.15); /* Slightly more transparent for card base */
+            --border-glow-start: #81D4FA; /* Light blue */
+            --border-glow-end: #E0F7FA; /* Lighter blue */
+            --modal-bg: rgba(255, 255, 255, 0.3); /* More transparent for modal */
+            --modal-backdrop: rgba(0, 0, 0, 0.4);
+        }
+
+        body {
+            font-family: 'Open Sans', sans-serif;
+            margin: 0;
+            padding: 0;
+            color: var(--text-dark);
+    
+            padding-top: 200px; 
+            overflow-x: hidden; /* Prevent horizontal scroll */
+        }
+
+        h1, h2 {
+            font-family: 'Poppins', sans-serif;
+            color: var(--primary-teal);
+            font-weight: 700;
+            text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.1);
+        }
+
+/* --- Header --- */
+/* Top header with 3 image logos */
+/* --- Fixed Header Wrapper --- */
+    .header-wrapper {
+      position: fixed;
+      top: 0;
+	  
+      left: 0;
+      width: 100%;
+      z-index: 999;
+      background-color: white;
+      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    }
+
+  .topheader {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: white;
+    padding: 10px 20px;
+    position: relative;
+    flex-wrap: wrap;
+	height: 110px;
+	margin-top:10px;
+  }
+
+  .topheader img {
+    height: 100px;
+  }
+
+  .left-logo,
+  .right-logo {
+    flex: 1;
+  }
+
+  .left-logo {
+    text-align: left;
+  }
+
+  .left-logo img {
+    width: 350px;
+    height: auto;
+  }
+
+.center-logo img {
+    width: 380px;
+    height: auto;
+  }
+
+  .center-logo {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+  }
+
+  .right-logo {
+    text-align: right;
+  }
+
+  .navbar {
+    background-color: #800000;
+    display: flex;
+    justify-content:center;
+    align-items: center;
+    padding: 10px 20px;
+    flex-wrap: wrap;
+    position: relative;
+	
+	
+  }
+
+  .nav-links {
+    display: flex;
+    gap: 13px;
+    flex-wrap: wrap;
+  }
+
+  .nav-links a {
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+    transition: color 0.3s ease;
+  }
+
+  .nav-links a:hover {
+    color: #ffcc00;
+  }
+
+  .register-btn {
+    background-color: yellow;
+    border-radius: 25px;
+    padding: 10px 20px;
+    color: black;
+    font-weight: bold;
+    white-space: nowrap;
+	margin-left:50px;
+  }
+
+  .register-btn:hover {
+    background-color: #800000;
+    color: white;
+  }
+
+  .hamburger {
+    display: none;
+    flex-direction: column;
+    cursor: pointer;
+  }
+
+  .hamburger div {
+    width: 25px;
+    height: 3px;
+    background-color: white;
+    margin: 4px 0;
+  }
+
+  .navbar-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 20px;
+	
+  }
+
+  /* Responsive Styles */
+
+  @media (max-width: 1200px) {
+    .hamburger {
+      display: flex;
+    }
+
+    .nav-links {
+      display: none;
+      flex-direction: column;
+      width: 100%;
+      background-color: #800000;
+      margin-top: 10px;
+    }
+
+    .nav-links.active {
+      display: flex;
+    }
+
+    .navbar {
+      flex-direction: column;
+      align-items: flex-start;
+    }
+
+    .register-btn {
+      align-self: flex-end;
+      margin-top: 10px;
+    }
+
+    .topheader {
+      flex-direction: column;
+      align-items: center;
+    }
+
+    .center-logo {
+      position: static;
+      transform: none;
+      margin: 10px 0;
+    }
+
+    .topheader img {
+      height: 60px;
+      width: auto;
+    }
+
+    .left-logo img,
+    .right-logo img,
+    .center-logo img {
+      width: 150px;
+      height: auto;
+    }
+  }
+  
+  
+  
+
+  /* --- General Section Styling --- */
+        .section {
+            padding: 40px 20px;
+            max-width: 1200px;
+           margin-bottom:20px;
+            color:#000000;
+
+        }
+
+        .section h2 {
+            font-family: Algerian;
+            color: var(--primary-maroon);
+            font-size: 4rem;
+            font-weight: 550;
+            margin-bottom: 45px;
+			 
+            text-align: center;
+            position: relative;
+            padding-bottom: 15px;
+        }
+
+        .section h2::after {
+            content: '';
+            position: absolute;
+            left: 50%;
+            bottom: 0;
+            transform: translateX(-50%);
+            width: 120px;
+            height: 6px;
+            background-color: var(--accent-gold);
+            border-radius: 4px;
+        }
+
+        .section .intro-text {
+            text-align: center;
+            margin-bottom: 60px;
+            font-size: 1.25rem;
+            color:#000000;
+            max-width: 900px;
+            margin-left: auto;
+            margin-right: auto;
+            line-height: 1.8;
+            font-weight: 300;
+        }
+	
+  
+  
+  
+  
+  
+        .container-wrapper {
+            background: rgba(255, 255, 255, 0.1); /* Glassmorphism background for the main content area */
+            border-radius: 20px;
+            box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
+            backdrop-filter: blur(10px);
+            -webkit-backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.18);
+           
+			 margin-top: 140px;
+            max-width: 1200px;
+            width: 100%;
+        }
+
+        .text-center {
+            text-align: center;
+        }
+
+        .mb-5 {
+            margin-bottom: 3rem;
+        }
+
+        
+
+        
+        /* Info Box */
+        .info-box {
+            background: rgba(255, 255, 255, 0.1); /* Glassmorphism effect */
+            border: 1px solid rgba(255, 255, 255, 0.18);
+            border-radius: 50px;
+            padding: 20px 40px;
+            text-align: center;
+            margin: 60px auto;
+            max-width: 500px;
+            box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+            backdrop-filter: blur(5px);
+            -webkit-backdrop-filter: blur(5px);
+            position: relative;
+            overflow: hidden;
+            background-clip: padding-box; /* Crucial for shimmer effect */
+			background: linear-gradient(135deg, #a8dadc, #457b9d, #1d3557); /* Dynamic gradient background */
+        }
+
+        .info-box::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: conic-gradient(transparent, rgba(255, 255, 255, 0.8), transparent 20%, transparent 80%, rgba(255, 255, 255, 0.8), transparent);
+            border-radius: inherit;
+            animation: shimmer-border 4s linear infinite;
+            z-index: -1;
+        }
+
+        .info-box p {
+            margin: 0;
+            color: var(--text-light); /* Lighter text for contrast */
+            font-size: 1.5em;
+            font-weight: 800;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3);
+            position: relative; /* To keep text above pseudo-element */
+            z-index: 1;
+        }
+
+        @keyframes shimmer-border {
+            0% {
+                transform: rotate(0deg);
+            }
+            100% {
+                transform: rotate(360deg);
+            }
+        }
+
+        /* Responsive adjustments */
+        @media (max-width: 768px) {
+            .container-wrapper {
+                margin: 20px;
+                padding: 30px 20px;
+            }
+            h1 {
+                font-size: 2em;
+            }
+            
+            .info-box p {
+                font-size: 1.2em;
+            }
+            .modal-content {
+                width: 95%;
+                padding: 20px;
+            }
+            .modal-content h2 {
+                font-size: 1.8em;
+            }
+        }
+
+        @media (max-width: 480px) {
+            h1 {
+                font-size: 1.8em;
+            }
+            
+            .info-box p {
+                font-size: 1em;
+            }
+            
+        }
+
+       .accommodation {
+      max-width: 900px;
+      margin: auto;
+    }
+
+        .hotel-list {
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+      max-width: 900px;
+      margin: auto;
+    }
+
+    .hotel-card {
+      display: flex;
+      background: #fff;
+      border-radius: 12px;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+      overflow: hidden;
+      transition: transform 0.2s ease;
+    }
+
+    .hotel-card:hover {
+      transform: scale(1.02);
+    }
+
+    .hotel-card img {
+      width: 200px;
+      height: 150px;
+      object-fit: cover;
+    }
+
+    .hotel-info {
+      padding: 15px;
+      flex: 1;
+    }
+
+    .hotel-info h3 {
+      margin: 0;
+      font-size: 20px;
+      color: #333;
+    }
+
+    .hotel-info p {
+      margin: 5px 0;
+      color: #666;
+    }
+
+    .price {
+      margin-top: 10px;
+      font-weight: bold;
+      color: #2c7a7b;
+    }
+
+    .btn {
+      margin-top: 15px;
+      display: inline-block;
+      padding: 8px 15px;
+      background: #2c7a7b;
+      color: #fff;
+      border-radius: 6px;
+      text-decoration: none;
+      transition: background 0.3s ease;
+    }
+
+    .btn:hover {
+      background: #245f60;
+    }
+    </style>
+</head>
+<header>
+  <!-- Top Header with Image Logos -->
+ <div class="header-wrapper">
+  <div class="topheader">
+    <div class="left-logo">
+      <img src="img-folder\14112024_-_03_1_-removebg-preview.png" alt="Left Logo">
+    </div>
+    <div class="center-logo">
+      <img src="img-folder\tcelogo.JPG" alt="Center Logo">
+    </div>
+    <div class="right-logo">
+      <img src="https://www.tceeiacp.in/images/New_Four_Logo.png" alt="Right Logo">
+    </div>
+  </div>
+
+  <!-- Navigation Bar -->
+  <div class="navbar">
+    
+
+    <!-- Collapsible links -->
+    <div class="nav-links" id="navLinks">
+      <a href="index.html#home">Home</a>
+      <a href="index.html#about">About</a>
+      <a href="index.html#committee-section">Committees</a>
+      <a href="index.html#speakers">Speakers</a>
+      <a href="programme.html">Programme</a>
+      <a href="index.html#call-for-papers">Call for Papers</a>
+      <a href="index.html#dates">Important Dates</a>
+      <a href="#correctaccommadation.html">Accommodation</a>
+      <a href="maduraipage.html">Explore Madurai</a>
+      <a href="phygallery.html">Gallery</a>
+      <a href="index.html#footer-section">Contact Us</a>
+      <a href="index.html#payment">Register Here</a>
+    </div>
+	<!-- First row: nav + hamburger + register -->
+    
+  </div>
+
+  
+
+</header>
+<body>
+<div class="accommodation-intro" style="text-align:center; margin:50px auto; max-width:900px;">
+  <h2 style="font-size:2rem; color:#00796B; margin-bottom:10px;">Nearby Hotels</h2>
+  <p style="font-size:1rem; color:#444; line-height:1.6;">
+    The following hotels are located in close proximity to our college for your convenience.
+  </p>
+</div>
+
+<div class="hotel-list">
+
+    <div class="hotel-card">
+      <img src="https://lh3.googleusercontent.com/p/AF1QipOhc14Yjphfpndg4dsl1UKcTF0GVpp7NiN0x74d=s1360-w1360-h1020-rw" alt="Hotel Image">
+      <div class="hotel-info">
+        <h3>Hotel Heritage Residency</h3>
+        <p>  Situated in the city centre, 4 km from Meenakshi Amman Temple, this contemporary hotel offers well-appointed rooms with free Wi-Fi. Guests can enjoy complimentary breakfast, on-site dining, a fitness room, and a rooftop pool. </p>
+        <p>📍Address: 144/1A, NH-7 Bypass Rd, Vilangudi, Madurai, Tamil Nadu 625018.</p>
+        <a href="https://www.google.com/travel/search?q=hotel%20heritage%20residency%20madurai&g2lb=4965990%2C4969803%2C72302247%2C72317059%2C72414906%2C72471280%2C72472051%2C72485658%2C72560029%2C72573224%2C72601601%2C72616120%2C72647020%2C72686036%2C72803964%2C72882230%2C72958624%2C72959983%2C73010541%2C73059275%2C73064216%2C73064764%2C73107089&hl=en-IN&gl=in&ssta=1&ts=CAEaRwopEicyJTB4M2IwMGNmNDUyZjM5ZjBjYjoweGUwNzNjMzU1MGVjYjc4YjUSGhIUCgcI6Q8QCRgeEgcI6Q8QChgBGAEyAhAA&qs=CAEyFENnc0l0Zkd0OXREcThMbmdBUkFCOAJCCQm1eMsOVcNz4EIJCbV4yw5Vw3Pg&ap=ugEGcHJpY2Vz&ved=0CAAQ5JsGahcKEwioz7zxnP6PAxUAAAAAHQAAAAAQBw&ictx=111" class="btn">Book Now</a>
+      </div>
+    </div>
+
+    <div class="hotel-card">
+      <img src="https://lh3.googleusercontent.com/gps-cs-s/AC9h4npqKCf4riiO8tMOhhXu2hy6n2AaLKv7MxU3gv2vE92gD8PDZP8SlDQ04ulrk3joRkqVH4eZhC87Q5PrNqCmLZccKcBj3oBwtAbC7kqqgKe7G7UA7XEx-5zDHtzncI8ANBdYRZE=w253-h189-k-no" alt="Hotel Image">
+      <div class="hotel-info">
+        <h3>Hotel Park Plaza</h3>
+        <p> Located in Madurai’s historic centre, this hotel is close to Meenakshi Amman Temple and other landmarks. It offers relaxed rooms with free Wi-Fi, flat-screen TVs, and room service. Amenities include a rooftop eatery, international restaurant, bar, parking, and a breakfast buffet.</p>
+        <p>📍Address:114-115, W Marret St, Madurai Main, Madurai, Tamil Nadu 625016</p>
+        
+        <a href="https://www.google.com/travel/search?q=hotel%20park%20plaza%20madurai&g2lb=4965990%2C4969803%2C72302247%2C72317059%2C72414906%2C72471280%2C72472051%2C72485658%2C72560029%2C72573224%2C72601601%2C72616120%2C72647020%2C72686036%2C72803964%2C72882230%2C72958624%2C72959983%2C73010541%2C73059275%2C73064216%2C73064764%2C73107089&hl=en-IN&gl=in&ssta=1&ts=CAEaRwopEicyJTB4M2IwMGM1ODdiZDQwYjJlYjoweGRhODYxNWFlZjg1NWRkMTESGhIUCgcI6Q8QChgNEgcI6Q8QChgOGAEyAhAA&qs=CAEyFENnc0lrYnJYd3UtMWhjUGFBUkFCOAJCCQkR3VX4rhWG2kIJCRHdVfiuFYba&ap=ugEGcHJpY2Vz&ved=0CAAQ5JsGahcKEwjYiMj7nv6PAxUAAAAAHQAAAAAQBA&ictx=111" class="btn">Book Now</a>
+      </div>
+    </div>
+
+    <div class="hotel-card">
+      <img src="https://lh3.googleusercontent.com/p/AF1QipN3oXL9GbtawFg2Zwg6-c_P0jI_iDqspHdbgc1e=w252-h195-k-no" alt="Hotel Image">
+      <div class="hotel-info">
+        <h3>Hotel VENKATESWARAA</h3>
+        <p>Conveniently located near NH 85 and 3 km from Meenakshi Amman Temple, this hotel offers simple rooms with Wi-Fi, flat-screen TVs, and room service. Amenities include a restaurant, parking, and optional breakfast.</p>
+        <p>📍Address:Perumal Nandavanam Street, 2/2 Thiruparankundram, TPK Rd, Andalpuram, Madurai, Tamil Nadu 625011</p>
+        <a href="https://www.google.com/travel/search?q=hotel%20sree%20devi&g2lb=4965990%2C4969803%2C72302247%2C72317059%2C72414906%2C72471280%2C72472051%2C72485658%2C72560029%2C72573224%2C72601601%2C72616120%2C72647020%2C72686036%2C72803964%2C72882230%2C72958624%2C72959983%2C73010541%2C73059275%2C73064216%2C73064764%2C73107089&hl=en-IN&gl=in&ssta=1&ts=CAEaSQopEicyJTB4M2IwMGNmODA1ZDc1NDM2MzoweDI4NDJlYTRkZmFkOTc2MGUSHBIUCgcI6Q8QChgGEgcI6Q8QChgHGAEyBAgAEAAqBwoFOgNJTlI&qs=CAEyE0Nnb0lqdXpsMXRfSnVxRW9FQUU4AkIJCQ522fpN6kIoQgkJDnbZ-k3qQihIAA&ap=MAC6AQhvdmVydmlldw&ictx=111" class="btn">Book Now</a>
+      </div>
+    </div>
+
+     <div class="hotel-card">
+      <img src="https://lh4.googleusercontent.com/proxy/AIQzERxWNI-Zn2E5NGzjlVy_dCD3dGmGLcnsSfqXPHtP5BYra9XoWdB2-DUws0zulynV74PLbGT_7YQS5w3Ygy0U5GBsQlIQ_6EUPuVmXmdelm6RXkvW1lewnBRXxQHFpvVBMyXUI7TitLygCK3dkt-gMg_oPg=w253-h186-k-no" alt="Hotel Image">
+      <div class="hotel-info">
+        <h3>Hotel Taj</h3>
+        <p>An elegant, historical hotel that offers an immersive experience in the rich cultural ambiance of Madurai. Located close to the city's key attractions.
+</p>
+        <p>📍Address:13-a, Tirupparankunram Rd, near Periyar, Periyar, Madurai Main, Madurai, Tamil Nadu 625001</p>
+        <a href="https://www.google.com/travel/search?q=about%20hotel%20taj%20madurai&g2lb=4965990%2C4969803%2C72302247%2C72317059%2C72414906%2C72471280%2C72472051%2C72485658%2C72560029%2C72573224%2C72601601%2C72616120%2C72647020%2C72686036%2C72803964%2C72882230%2C72958624%2C72959983%2C73010541%2C73059275%2C73064216%2C73064764%2C73107089&hl=en-IN&gl=in&ssta=1&ts=CAEaSQopEicyJTB4M2IwMGM1ODA0Mzg3YjQ0YjoweGZiMjIwNzNhZWEwZjcyMGQSHBIUCgcI6Q8QDBgdEgcI6Q8QDBgeGAEyBAgAEAAqBwoFOgNJTlI&qs=CAEyFENnc0lqZVM5MEs3bmdaSDdBUkFCOAJCCQkNcg_qOgci-0IJCQ1yD-o6ByL7SAA&ap=MAC6AQZwcmljZXM&ictx=111" class="btn">Book Now</a>
+      </div>
+    </div>
+
+    <div class="hotel-card">
+      <img src="https://lh3.googleusercontent.com/p/AF1QipP8aZeaVVAB7z18C5cP13VCZszf6T8Q-V-o-whP=w253-h171-k-no" alt="Hotel Image">
+      <div class="hotel-info">
+        <h3>Hotel Germanus</h3>
+        <p>Off NH 85, this modern hotel is 4 km from Meenakshi Amman Temple. It features warm rooms with Wi-Fi and flat-screen TVs, plus suites with living areas. Amenities include multiple dining options, a bar, fitness centre, rooftop pool, and a breakfast buffet.</p>
+        <p>📍Address:28, Bypass Rd, opposite Big Bazaar, Kalavasal, Madurai, Tamil Nadu 625010</p>
+        <a href="https://www.google.com/travel/search?q=hotel%20germanus&g2lb=4965990%2C4969803%2C72302247%2C72317059%2C72414906%2C72471280%2C72472051%2C72485658%2C72560029%2C72573224%2C72601601%2C72616120%2C72647020%2C72686036%2C72803964%2C72882230%2C72958624%2C72959983%2C73010541%2C73059275%2C73064216%2C73064764%2C73107089&hl=en-IN&gl=in&ssta=1&ts=CAEaRwopEicyJTB4M2IwMGNmNjk0NzJjZDMzNzoweGNiZWVkZjE0N2MzNDkxMDkSGhIUCgcI6Q8QChgNEgcI6Q8QChgOGAEyAggCKgcKBToDSU5S&qs=CAEyFENnc0lpYUxTNGNmaXRfZkxBUkFCOAJCCQkJkTR8FN_uy0IJCQmRNHwU3-7LSAA&ap=MAC6AQZwcmljZXM&ictx=111" class="btn">Book Now</a>
+      </div>
+    </div>
+
+  </div>
+
+ <div class="accommodation-contact" style="text-align:center; margin:40px auto; max-width:900px; padding:15px; border-top:1px solid #ddd;">
+  <p style="font-size:1rem; color:#333;">
+    For further assistance regarding accommodation, please contact:<br>
+    <strong>Dr.S.Sivallango,9843817539</strong>
+  </p>
+</div>
+
+   
+
+    <script>
+        const workshopCards = document.querySelectorAll('.workshop-card');
+        const modal = document.getElementById('workshopModal');
+        const modalTitle = document.getElementById('modalTitle');
+        const modalSpeaker = document.getElementById('modalSpeaker');
+        const modalAffiliation = document.getElementById('modalAffiliation');
+
+        workshopCards.forEach(card => {
+            card.addEventListener('click', () => {
+                const title = card.dataset.title;
+                const speaker = card.dataset.speaker;
+                const affiliation = card.dataset.affiliation;
+
+                modalTitle.textContent = title;
+                modalSpeaker.innerHTML = `<strong>${speaker}</strong>`;
+                modalAffiliation.textContent = affiliation;
+                
+                modal.classList.add('active'); // Show modal
+            });
+        });
+
+        function closeModal() {
+            modal.classList.remove('active'); // Hide modal
+        }
+
+        // Close modal if clicked outside content
+        modal.addEventListener('click', (event) => {
+            if (event.target === modal) {
+                closeModal();
+            }
+        });
+    </script>
+
+     
+</body>
+</html>
